@@ -2001,7 +2001,7 @@ impl WorklinkClient {
     pub fn new(region: region::Region) -> WorklinkClient {
         WorklinkClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -2018,7 +2018,7 @@ impl WorklinkClient {
     {
         WorklinkClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }

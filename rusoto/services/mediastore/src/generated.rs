@@ -993,7 +993,7 @@ impl MediaStoreClient {
     pub fn new(region: region::Region) -> MediaStoreClient {
         MediaStoreClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -1010,7 +1010,7 @@ impl MediaStoreClient {
     {
         MediaStoreClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }

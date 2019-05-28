@@ -4681,7 +4681,7 @@ impl ConfigServiceClient {
     pub fn new(region: region::Region) -> ConfigServiceClient {
         ConfigServiceClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -4698,7 +4698,7 @@ impl ConfigServiceClient {
     {
         ConfigServiceClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }

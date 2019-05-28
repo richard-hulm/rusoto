@@ -1939,7 +1939,7 @@ impl CognitoIdentityClient {
     pub fn new(region: region::Region) -> CognitoIdentityClient {
         CognitoIdentityClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -1956,7 +1956,7 @@ impl CognitoIdentityClient {
     {
         CognitoIdentityClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }

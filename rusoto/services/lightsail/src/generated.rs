@@ -12035,7 +12035,7 @@ impl LightsailClient {
     pub fn new(region: region::Region) -> LightsailClient {
         LightsailClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -12052,7 +12052,7 @@ impl LightsailClient {
     {
         LightsailClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }

@@ -52,7 +52,7 @@ pub struct AccessKey {
 struct AccessKeyDeserializer;
 impl AccessKeyDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<AccessKey, XmlParseError> {
@@ -84,10 +84,7 @@ impl AccessKeyDeserializer {
 struct AccessKeyIdTypeDeserializer;
 impl AccessKeyIdTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -109,7 +106,7 @@ pub struct AccessKeyLastUsed {
 struct AccessKeyLastUsedDeserializer;
 impl AccessKeyLastUsedDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<AccessKeyLastUsed, XmlParseError> {
@@ -146,7 +143,7 @@ pub struct AccessKeyMetadata {
 struct AccessKeyMetadataDeserializer;
 impl AccessKeyMetadataDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<AccessKeyMetadata, XmlParseError> {
@@ -176,7 +173,7 @@ impl AccessKeyMetadataDeserializer {
 struct AccessKeyMetadataListTypeDeserializer;
 impl AccessKeyMetadataListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<AccessKeyMetadata>, XmlParseError> {
@@ -193,10 +190,7 @@ impl AccessKeyMetadataListTypeDeserializer {
 struct AccessKeySecretTypeDeserializer;
 impl AccessKeySecretTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -207,7 +201,7 @@ impl AccessKeySecretTypeDeserializer {
 struct AccountAliasListTypeDeserializer;
 impl AccountAliasListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<String>, XmlParseError> {
@@ -224,10 +218,7 @@ impl AccountAliasListTypeDeserializer {
 struct AccountAliasTypeDeserializer;
 impl AccountAliasTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -250,10 +241,7 @@ impl ActionNameListTypeSerializer {
 struct ActionNameTypeDeserializer;
 impl ActionNameTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -336,7 +324,7 @@ impl AddUserToGroupRequestSerializer {
 struct ArnListTypeDeserializer;
 impl ArnListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<String>, XmlParseError> {
@@ -353,10 +341,7 @@ impl ArnListTypeDeserializer {
 struct ArnTypeDeserializer;
 impl ArnTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -442,7 +427,7 @@ pub struct AttachedPermissionsBoundary {
 struct AttachedPermissionsBoundaryDeserializer;
 impl AttachedPermissionsBoundaryDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<AttachedPermissionsBoundary, XmlParseError> {
@@ -474,7 +459,7 @@ impl AttachedPermissionsBoundaryDeserializer {
 struct AttachedPoliciesListTypeDeserializer;
 impl AttachedPoliciesListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<AttachedPolicy>, XmlParseError> {
@@ -499,7 +484,7 @@ pub struct AttachedPolicy {
 struct AttachedPolicyDeserializer;
 impl AttachedPolicyDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<AttachedPolicy, XmlParseError> {
@@ -523,10 +508,7 @@ impl AttachedPolicyDeserializer {
 struct AttachmentCountTypeDeserializer;
 impl AttachmentCountTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -537,10 +519,7 @@ impl AttachmentCountTypeDeserializer {
 struct BooleanObjectTypeDeserializer;
 impl BooleanObjectTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<bool, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<bool, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = bool::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -551,10 +530,7 @@ impl BooleanObjectTypeDeserializer {
 struct BooleanTypeDeserializer;
 impl BooleanTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<bool, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<bool, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = bool::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -565,7 +541,7 @@ impl BooleanTypeDeserializer {
 struct BootstrapDatumDeserializer;
 impl BootstrapDatumDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<bytes::Bytes, XmlParseError> {
@@ -579,10 +555,7 @@ impl BootstrapDatumDeserializer {
 struct CertificateBodyTypeDeserializer;
 impl CertificateBodyTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -593,10 +566,7 @@ impl CertificateBodyTypeDeserializer {
 struct CertificateChainTypeDeserializer;
 impl CertificateChainTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -607,10 +577,7 @@ impl CertificateChainTypeDeserializer {
 struct CertificateIdTypeDeserializer;
 impl CertificateIdTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -621,7 +588,7 @@ impl CertificateIdTypeDeserializer {
 struct CertificateListTypeDeserializer;
 impl CertificateListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<SigningCertificate>, XmlParseError> {
@@ -662,7 +629,7 @@ impl ChangePasswordRequestSerializer {
 struct ClientIDListTypeDeserializer;
 impl ClientIDListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<String>, XmlParseError> {
@@ -691,10 +658,7 @@ impl ClientIDListTypeSerializer {
 struct ClientIDTypeDeserializer;
 impl ClientIDTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -705,10 +669,7 @@ impl ClientIDTypeDeserializer {
 struct ColumnNumberDeserializer;
 impl ColumnNumberDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -766,10 +727,7 @@ impl ContextEntryListTypeSerializer {
 struct ContextKeyNameTypeDeserializer;
 impl ContextKeyNameTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -780,7 +738,7 @@ impl ContextKeyNameTypeDeserializer {
 struct ContextKeyNamesResultListTypeDeserializer;
 impl ContextKeyNamesResultListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<String>, XmlParseError> {
@@ -839,7 +797,7 @@ pub struct CreateAccessKeyResponse {
 struct CreateAccessKeyResponseDeserializer;
 impl CreateAccessKeyResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<CreateAccessKeyResponse, XmlParseError> {
@@ -911,7 +869,7 @@ pub struct CreateGroupResponse {
 struct CreateGroupResponseDeserializer;
 impl CreateGroupResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<CreateGroupResponse, XmlParseError> {
@@ -963,7 +921,7 @@ pub struct CreateInstanceProfileResponse {
 struct CreateInstanceProfileResponseDeserializer;
 impl CreateInstanceProfileResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<CreateInstanceProfileResponse, XmlParseError> {
@@ -1023,7 +981,7 @@ pub struct CreateLoginProfileResponse {
 struct CreateLoginProfileResponseDeserializer;
 impl CreateLoginProfileResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<CreateLoginProfileResponse, XmlParseError> {
@@ -1088,7 +1046,7 @@ pub struct CreateOpenIDConnectProviderResponse {
 struct CreateOpenIDConnectProviderResponseDeserializer;
 impl CreateOpenIDConnectProviderResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<CreateOpenIDConnectProviderResponse, XmlParseError> {
@@ -1155,7 +1113,7 @@ pub struct CreatePolicyResponse {
 struct CreatePolicyResponseDeserializer;
 impl CreatePolicyResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<CreatePolicyResponse, XmlParseError> {
@@ -1210,7 +1168,7 @@ pub struct CreatePolicyVersionResponse {
 struct CreatePolicyVersionResponseDeserializer;
 impl CreatePolicyVersionResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<CreatePolicyVersionResponse, XmlParseError> {
@@ -1295,7 +1253,7 @@ pub struct CreateRoleResponse {
 struct CreateRoleResponseDeserializer;
 impl CreateRoleResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<CreateRoleResponse, XmlParseError> {
@@ -1345,7 +1303,7 @@ pub struct CreateSAMLProviderResponse {
 struct CreateSAMLProviderResponseDeserializer;
 impl CreateSAMLProviderResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<CreateSAMLProviderResponse, XmlParseError> {
@@ -1406,7 +1364,7 @@ pub struct CreateServiceLinkedRoleResponse {
 struct CreateServiceLinkedRoleResponseDeserializer;
 impl CreateServiceLinkedRoleResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<CreateServiceLinkedRoleResponse, XmlParseError> {
@@ -1456,7 +1414,7 @@ pub struct CreateServiceSpecificCredentialResponse {
 struct CreateServiceSpecificCredentialResponseDeserializer;
 impl CreateServiceSpecificCredentialResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<CreateServiceSpecificCredentialResponse, XmlParseError> {
@@ -1526,7 +1484,7 @@ pub struct CreateUserResponse {
 struct CreateUserResponseDeserializer;
 impl CreateUserResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<CreateUserResponse, XmlParseError> {
@@ -1578,7 +1536,7 @@ pub struct CreateVirtualMFADeviceResponse {
 struct CreateVirtualMFADeviceResponseDeserializer;
 impl CreateVirtualMFADeviceResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<CreateVirtualMFADeviceResponse, XmlParseError> {
@@ -1601,10 +1559,7 @@ impl CreateVirtualMFADeviceResponseDeserializer {
 struct DateTypeDeserializer;
 impl DateTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -1979,7 +1934,7 @@ pub struct DeleteServiceLinkedRoleResponse {
 struct DeleteServiceLinkedRoleResponseDeserializer;
 impl DeleteServiceLinkedRoleResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<DeleteServiceLinkedRoleResponse, XmlParseError> {
@@ -2144,7 +2099,7 @@ pub struct DeletionTaskFailureReasonType {
 struct DeletionTaskFailureReasonTypeDeserializer;
 impl DeletionTaskFailureReasonTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<DeletionTaskFailureReasonType, XmlParseError> {
@@ -2171,10 +2126,7 @@ impl DeletionTaskFailureReasonTypeDeserializer {
 struct DeletionTaskIdTypeDeserializer;
 impl DeletionTaskIdTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -2185,10 +2137,7 @@ impl DeletionTaskIdTypeDeserializer {
 struct DeletionTaskStatusTypeDeserializer;
 impl DeletionTaskStatusTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -2308,7 +2257,7 @@ pub struct EntityDetails {
 struct EntityDetailsDeserializer;
 impl EntityDetailsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<EntityDetails, XmlParseError> {
@@ -2332,7 +2281,7 @@ impl EntityDetailsDeserializer {
 struct EntityDetailsListTypeDeserializer;
 impl EntityDetailsListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<EntityDetails>, XmlParseError> {
@@ -2363,7 +2312,7 @@ pub struct EntityInfo {
 struct EntityInfoDeserializer;
 impl EntityInfoDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<EntityInfo, XmlParseError> {
@@ -2405,10 +2354,7 @@ impl EntityListTypeSerializer {
 struct EntityNameTypeDeserializer;
 impl EntityNameTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -2428,7 +2374,7 @@ pub struct ErrorDetails {
 struct ErrorDetailsDeserializer;
 impl ErrorDetailsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ErrorDetails, XmlParseError> {
@@ -2449,7 +2395,7 @@ impl ErrorDetailsDeserializer {
 struct EvalDecisionDetailsTypeDeserializer;
 impl EvalDecisionDetailsTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<::std::collections::HashMap<String, String>, XmlParseError> {
@@ -2472,10 +2418,7 @@ impl EvalDecisionDetailsTypeDeserializer {
 struct EvalDecisionSourceTypeDeserializer;
 impl EvalDecisionSourceTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -2507,7 +2450,7 @@ pub struct EvaluationResult {
 struct EvaluationResultDeserializer;
 impl EvaluationResultDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<EvaluationResult, XmlParseError> {
@@ -2573,7 +2516,7 @@ impl EvaluationResultDeserializer {
 struct EvaluationResultsListTypeDeserializer;
 impl EvaluationResultsListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<EvaluationResult>, XmlParseError> {
@@ -2590,10 +2533,7 @@ impl EvaluationResultsListTypeDeserializer {
 struct ExistingUserNameTypeDeserializer;
 impl ExistingUserNameTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -2613,7 +2553,7 @@ pub struct GenerateCredentialReportResponse {
 struct GenerateCredentialReportResponseDeserializer;
 impl GenerateCredentialReportResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GenerateCredentialReportResponse, XmlParseError> {
@@ -2667,7 +2607,7 @@ pub struct GenerateServiceLastAccessedDetailsResponse {
 struct GenerateServiceLastAccessedDetailsResponseDeserializer;
 impl GenerateServiceLastAccessedDetailsResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GenerateServiceLastAccessedDetailsResponse, XmlParseError> {
@@ -2717,7 +2657,7 @@ pub struct GetAccessKeyLastUsedResponse {
 struct GetAccessKeyLastUsedResponseDeserializer;
 impl GetAccessKeyLastUsedResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetAccessKeyLastUsedResponse, XmlParseError> {
@@ -2798,7 +2738,7 @@ pub struct GetAccountAuthorizationDetailsResponse {
 struct GetAccountAuthorizationDetailsResponseDeserializer;
 impl GetAccountAuthorizationDetailsResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetAccountAuthorizationDetailsResponse, XmlParseError> {
@@ -2853,7 +2793,7 @@ pub struct GetAccountPasswordPolicyResponse {
 struct GetAccountPasswordPolicyResponseDeserializer;
 impl GetAccountPasswordPolicyResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetAccountPasswordPolicyResponse, XmlParseError> {
@@ -2883,7 +2823,7 @@ pub struct GetAccountSummaryResponse {
 struct GetAccountSummaryResponseDeserializer;
 impl GetAccountSummaryResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetAccountSummaryResponse, XmlParseError> {
@@ -2938,7 +2878,7 @@ pub struct GetContextKeysForPolicyResponse {
 struct GetContextKeysForPolicyResponseDeserializer;
 impl GetContextKeysForPolicyResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetContextKeysForPolicyResponse, XmlParseError> {
@@ -3007,7 +2947,7 @@ pub struct GetCredentialReportResponse {
 struct GetCredentialReportResponseDeserializer;
 impl GetCredentialReportResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetCredentialReportResponse, XmlParseError> {
@@ -3074,7 +3014,7 @@ pub struct GetGroupPolicyResponse {
 struct GetGroupPolicyResponseDeserializer;
 impl GetGroupPolicyResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetGroupPolicyResponse, XmlParseError> {
@@ -3141,7 +3081,7 @@ pub struct GetGroupResponse {
 struct GetGroupResponseDeserializer;
 impl GetGroupResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetGroupResponse, XmlParseError> {
@@ -3199,7 +3139,7 @@ pub struct GetInstanceProfileResponse {
 struct GetInstanceProfileResponseDeserializer;
 impl GetInstanceProfileResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetInstanceProfileResponse, XmlParseError> {
@@ -3248,7 +3188,7 @@ pub struct GetLoginProfileResponse {
 struct GetLoginProfileResponseDeserializer;
 impl GetLoginProfileResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetLoginProfileResponse, XmlParseError> {
@@ -3306,7 +3246,7 @@ pub struct GetOpenIDConnectProviderResponse {
 struct GetOpenIDConnectProviderResponseDeserializer;
 impl GetOpenIDConnectProviderResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetOpenIDConnectProviderResponse, XmlParseError> {
@@ -3370,7 +3310,7 @@ pub struct GetPolicyResponse {
 struct GetPolicyResponseDeserializer;
 impl GetPolicyResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetPolicyResponse, XmlParseError> {
@@ -3417,7 +3357,7 @@ pub struct GetPolicyVersionResponse {
 struct GetPolicyVersionResponseDeserializer;
 impl GetPolicyVersionResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetPolicyVersionResponse, XmlParseError> {
@@ -3475,7 +3415,7 @@ pub struct GetRolePolicyResponse {
 struct GetRolePolicyResponseDeserializer;
 impl GetRolePolicyResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetRolePolicyResponse, XmlParseError> {
@@ -3526,7 +3466,7 @@ pub struct GetRoleResponse {
 struct GetRoleResponseDeserializer;
 impl GetRoleResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetRoleResponse, XmlParseError> {
@@ -3577,7 +3517,7 @@ pub struct GetSAMLProviderResponse {
 struct GetSAMLProviderResponseDeserializer;
 impl GetSAMLProviderResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetSAMLProviderResponse, XmlParseError> {
@@ -3646,7 +3586,7 @@ pub struct GetSSHPublicKeyResponse {
 struct GetSSHPublicKeyResponseDeserializer;
 impl GetSSHPublicKeyResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetSSHPublicKeyResponse, XmlParseError> {
@@ -3700,7 +3640,7 @@ pub struct GetServerCertificateResponse {
 struct GetServerCertificateResponseDeserializer;
 impl GetServerCertificateResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetServerCertificateResponse, XmlParseError> {
@@ -3770,7 +3710,7 @@ pub struct GetServiceLastAccessedDetailsResponse {
 struct GetServiceLastAccessedDetailsResponseDeserializer;
 impl GetServiceLastAccessedDetailsResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetServiceLastAccessedDetailsResponse, XmlParseError> {
@@ -3876,7 +3816,7 @@ pub struct GetServiceLastAccessedDetailsWithEntitiesResponse {
 struct GetServiceLastAccessedDetailsWithEntitiesResponseDeserializer;
 impl GetServiceLastAccessedDetailsWithEntitiesResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetServiceLastAccessedDetailsWithEntitiesResponse, XmlParseError> {
@@ -3955,7 +3895,7 @@ pub struct GetServiceLinkedRoleDeletionStatusResponse {
 struct GetServiceLinkedRoleDeletionStatusResponseDeserializer;
 impl GetServiceLinkedRoleDeletionStatusResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetServiceLinkedRoleDeletionStatusResponse, XmlParseError> {
@@ -4016,7 +3956,7 @@ pub struct GetUserPolicyResponse {
 struct GetUserPolicyResponseDeserializer;
 impl GetUserPolicyResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetUserPolicyResponse, XmlParseError> {
@@ -4070,7 +4010,7 @@ pub struct GetUserResponse {
 struct GetUserResponseDeserializer;
 impl GetUserResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetUserResponse, XmlParseError> {
@@ -4103,10 +4043,7 @@ pub struct Group {
 struct GroupDeserializer;
 impl GroupDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<Group, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<Group, XmlParseError> {
         deserialize_elements::<_, Group, _>(tag_name, stack, |name, stack, obj| {
             match name {
                 "Arn" => {
@@ -4151,7 +4088,7 @@ pub struct GroupDetail {
 struct GroupDetailDeserializer;
 impl GroupDetailDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GroupDetail, XmlParseError> {
@@ -4195,7 +4132,7 @@ impl GroupDetailDeserializer {
 struct GroupDetailListTypeDeserializer;
 impl GroupDetailListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<GroupDetail>, XmlParseError> {
@@ -4212,7 +4149,7 @@ impl GroupDetailListTypeDeserializer {
 struct GroupListTypeDeserializer;
 impl GroupListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<Group>, XmlParseError> {
@@ -4229,7 +4166,7 @@ impl GroupListTypeDeserializer {
 struct GroupNameListTypeDeserializer;
 impl GroupNameListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<String>, XmlParseError> {
@@ -4246,10 +4183,7 @@ impl GroupNameListTypeDeserializer {
 struct GroupNameTypeDeserializer;
 impl GroupNameTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -4260,10 +4194,7 @@ impl GroupNameTypeDeserializer {
 struct IdTypeDeserializer;
 impl IdTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -4291,7 +4222,7 @@ pub struct InstanceProfile {
 struct InstanceProfileDeserializer;
 impl InstanceProfileDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<InstanceProfile, XmlParseError> {
@@ -4329,7 +4260,7 @@ impl InstanceProfileDeserializer {
 struct InstanceProfileListTypeDeserializer;
 impl InstanceProfileListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<InstanceProfile>, XmlParseError> {
@@ -4346,10 +4277,7 @@ impl InstanceProfileListTypeDeserializer {
 struct InstanceProfileNameTypeDeserializer;
 impl InstanceProfileNameTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -4360,10 +4288,7 @@ impl InstanceProfileNameTypeDeserializer {
 struct IntegerTypeDeserializer;
 impl IntegerTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -4374,10 +4299,7 @@ impl IntegerTypeDeserializer {
 struct JobIDTypeDeserializer;
 impl JobIDTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -4388,10 +4310,7 @@ impl JobIDTypeDeserializer {
 struct JobStatusTypeDeserializer;
 impl JobStatusTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -4402,10 +4321,7 @@ impl JobStatusTypeDeserializer {
 struct LineNumberDeserializer;
 impl LineNumberDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -4458,7 +4374,7 @@ pub struct ListAccessKeysResponse {
 struct ListAccessKeysResponseDeserializer;
 impl ListAccessKeysResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListAccessKeysResponse, XmlParseError> {
@@ -4525,7 +4441,7 @@ pub struct ListAccountAliasesResponse {
 struct ListAccountAliasesResponseDeserializer;
 impl ListAccountAliasesResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListAccountAliasesResponse, XmlParseError> {
@@ -4603,7 +4519,7 @@ pub struct ListAttachedGroupPoliciesResponse {
 struct ListAttachedGroupPoliciesResponseDeserializer;
 impl ListAttachedGroupPoliciesResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListAttachedGroupPoliciesResponse, XmlParseError> {
@@ -4682,7 +4598,7 @@ pub struct ListAttachedRolePoliciesResponse {
 struct ListAttachedRolePoliciesResponseDeserializer;
 impl ListAttachedRolePoliciesResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListAttachedRolePoliciesResponse, XmlParseError> {
@@ -4761,7 +4677,7 @@ pub struct ListAttachedUserPoliciesResponse {
 struct ListAttachedUserPoliciesResponseDeserializer;
 impl ListAttachedUserPoliciesResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListAttachedUserPoliciesResponse, XmlParseError> {
@@ -4854,7 +4770,7 @@ pub struct ListEntitiesForPolicyResponse {
 struct ListEntitiesForPolicyResponseDeserializer;
 impl ListEntitiesForPolicyResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListEntitiesForPolicyResponse, XmlParseError> {
@@ -4935,7 +4851,7 @@ pub struct ListGroupPoliciesResponse {
 struct ListGroupPoliciesResponseDeserializer;
 impl ListGroupPoliciesResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListGroupPoliciesResponse, XmlParseError> {
@@ -5008,7 +4924,7 @@ pub struct ListGroupsForUserResponse {
 struct ListGroupsForUserResponseDeserializer;
 impl ListGroupsForUserResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListGroupsForUserResponse, XmlParseError> {
@@ -5080,7 +4996,7 @@ pub struct ListGroupsResponse {
 struct ListGroupsResponseDeserializer;
 impl ListGroupsResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListGroupsResponse, XmlParseError> {
@@ -5146,7 +5062,7 @@ pub struct ListInstanceProfilesForRoleResponse {
 struct ListInstanceProfilesForRoleResponseDeserializer;
 impl ListInstanceProfilesForRoleResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListInstanceProfilesForRoleResponse, XmlParseError> {
@@ -5222,7 +5138,7 @@ pub struct ListInstanceProfilesResponse {
 struct ListInstanceProfilesResponseDeserializer;
 impl ListInstanceProfilesResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListInstanceProfilesResponse, XmlParseError> {
@@ -5298,7 +5214,7 @@ pub struct ListMFADevicesResponse {
 struct ListMFADevicesResponseDeserializer;
 impl ListMFADevicesResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListMFADevicesResponse, XmlParseError> {
@@ -5348,7 +5264,7 @@ pub struct ListOpenIDConnectProvidersResponse {
 struct ListOpenIDConnectProvidersResponseDeserializer;
 impl ListOpenIDConnectProvidersResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListOpenIDConnectProvidersResponse, XmlParseError> {
@@ -5384,7 +5300,7 @@ pub struct ListPoliciesGrantingServiceAccessEntry {
 struct ListPoliciesGrantingServiceAccessEntryDeserializer;
 impl ListPoliciesGrantingServiceAccessEntryDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListPoliciesGrantingServiceAccessEntry, XmlParseError> {
@@ -5458,7 +5374,7 @@ pub struct ListPoliciesGrantingServiceAccessResponse {
 struct ListPoliciesGrantingServiceAccessResponseDeserializer;
 impl ListPoliciesGrantingServiceAccessResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListPoliciesGrantingServiceAccessResponse, XmlParseError> {
@@ -5544,7 +5460,7 @@ pub struct ListPoliciesResponse {
 struct ListPoliciesResponseDeserializer;
 impl ListPoliciesResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListPoliciesResponse, XmlParseError> {
@@ -5571,7 +5487,7 @@ impl ListPoliciesResponseDeserializer {
 struct ListPolicyGrantingServiceAccessResponseListTypeDeserializer;
 impl ListPolicyGrantingServiceAccessResponseListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<ListPoliciesGrantingServiceAccessEntry>, XmlParseError> {
@@ -5632,7 +5548,7 @@ pub struct ListPolicyVersionsResponse {
 struct ListPolicyVersionsResponseDeserializer;
 impl ListPolicyVersionsResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListPolicyVersionsResponse, XmlParseError> {
@@ -5705,7 +5621,7 @@ pub struct ListRolePoliciesResponse {
 struct ListRolePoliciesResponseDeserializer;
 impl ListRolePoliciesResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListRolePoliciesResponse, XmlParseError> {
@@ -5777,7 +5693,7 @@ pub struct ListRoleTagsResponse {
 struct ListRoleTagsResponseDeserializer;
 impl ListRoleTagsResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListRoleTagsResponse, XmlParseError> {
@@ -5845,7 +5761,7 @@ pub struct ListRolesResponse {
 struct ListRolesResponseDeserializer;
 impl ListRolesResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListRolesResponse, XmlParseError> {
@@ -5892,7 +5808,7 @@ pub struct ListSAMLProvidersResponse {
 struct ListSAMLProvidersResponseDeserializer;
 impl ListSAMLProvidersResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListSAMLProvidersResponse, XmlParseError> {
@@ -5961,7 +5877,7 @@ pub struct ListSSHPublicKeysResponse {
 struct ListSSHPublicKeysResponseDeserializer;
 impl ListSSHPublicKeysResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListSSHPublicKeysResponse, XmlParseError> {
@@ -6034,7 +5950,7 @@ pub struct ListServerCertificatesResponse {
 struct ListServerCertificatesResponseDeserializer;
 impl ListServerCertificatesResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListServerCertificatesResponse, XmlParseError> {
@@ -6100,7 +6016,7 @@ pub struct ListServiceSpecificCredentialsResponse {
 struct ListServiceSpecificCredentialsResponseDeserializer;
 impl ListServiceSpecificCredentialsResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListServiceSpecificCredentialsResponse, XmlParseError> {
@@ -6169,7 +6085,7 @@ pub struct ListSigningCertificatesResponse {
 struct ListSigningCertificatesResponseDeserializer;
 impl ListSigningCertificatesResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListSigningCertificatesResponse, XmlParseError> {
@@ -6242,7 +6158,7 @@ pub struct ListUserPoliciesResponse {
 struct ListUserPoliciesResponseDeserializer;
 impl ListUserPoliciesResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListUserPoliciesResponse, XmlParseError> {
@@ -6314,7 +6230,7 @@ pub struct ListUserTagsResponse {
 struct ListUserTagsResponseDeserializer;
 impl ListUserTagsResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListUserTagsResponse, XmlParseError> {
@@ -6382,7 +6298,7 @@ pub struct ListUsersResponse {
 struct ListUsersResponseDeserializer;
 impl ListUsersResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListUsersResponse, XmlParseError> {
@@ -6450,7 +6366,7 @@ pub struct ListVirtualMFADevicesResponse {
 struct ListVirtualMFADevicesResponseDeserializer;
 impl ListVirtualMFADevicesResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListVirtualMFADevicesResponse, XmlParseError> {
@@ -6495,7 +6411,7 @@ pub struct LoginProfile {
 struct LoginProfileDeserializer;
 impl LoginProfileDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<LoginProfile, XmlParseError> {
@@ -6533,7 +6449,7 @@ pub struct MFADevice {
 struct MFADeviceDeserializer;
 impl MFADeviceDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<MFADevice, XmlParseError> {
@@ -6586,7 +6502,7 @@ pub struct ManagedPolicyDetail {
 struct ManagedPolicyDetailDeserializer;
 impl ManagedPolicyDetailDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ManagedPolicyDetail, XmlParseError> {
@@ -6659,7 +6575,7 @@ impl ManagedPolicyDetailDeserializer {
 struct ManagedPolicyDetailListTypeDeserializer;
 impl ManagedPolicyDetailListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<ManagedPolicyDetail>, XmlParseError> {
@@ -6678,10 +6594,7 @@ impl ManagedPolicyDetailListTypeDeserializer {
 struct MarkerTypeDeserializer;
 impl MarkerTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -6692,10 +6605,7 @@ impl MarkerTypeDeserializer {
 struct MaxPasswordAgeTypeDeserializer;
 impl MaxPasswordAgeTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -6706,7 +6616,7 @@ impl MaxPasswordAgeTypeDeserializer {
 struct MfaDeviceListTypeDeserializer;
 impl MfaDeviceListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<MFADevice>, XmlParseError> {
@@ -6723,10 +6633,7 @@ impl MfaDeviceListTypeDeserializer {
 struct MinimumPasswordLengthTypeDeserializer;
 impl MinimumPasswordLengthTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -6743,7 +6650,7 @@ pub struct OpenIDConnectProviderListEntry {
 struct OpenIDConnectProviderListEntryDeserializer;
 impl OpenIDConnectProviderListEntryDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<OpenIDConnectProviderListEntry, XmlParseError> {
@@ -6765,7 +6672,7 @@ impl OpenIDConnectProviderListEntryDeserializer {
 struct OpenIDConnectProviderListTypeDeserializer;
 impl OpenIDConnectProviderListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<OpenIDConnectProviderListEntry>, XmlParseError> {
@@ -6784,10 +6691,7 @@ impl OpenIDConnectProviderListTypeDeserializer {
 struct OpenIDConnectProviderUrlTypeDeserializer;
 impl OpenIDConnectProviderUrlTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -6805,7 +6709,7 @@ pub struct OrganizationsDecisionDetail {
 struct OrganizationsDecisionDetailDeserializer;
 impl OrganizationsDecisionDetailDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<OrganizationsDecisionDetail, XmlParseError> {
@@ -6855,7 +6759,7 @@ pub struct PasswordPolicy {
 struct PasswordPolicyDeserializer;
 impl PasswordPolicyDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<PasswordPolicy, XmlParseError> {
@@ -6931,10 +6835,7 @@ impl PasswordPolicyDeserializer {
 struct PasswordReusePreventionTypeDeserializer;
 impl PasswordReusePreventionTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -6945,10 +6846,7 @@ impl PasswordReusePreventionTypeDeserializer {
 struct PathTypeDeserializer;
 impl PathTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -6959,10 +6857,7 @@ impl PathTypeDeserializer {
 struct PermissionsBoundaryAttachmentTypeDeserializer;
 impl PermissionsBoundaryAttachmentTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -6999,10 +6894,7 @@ pub struct Policy {
 struct PolicyDeserializer;
 impl PolicyDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<Policy, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<Policy, XmlParseError> {
         deserialize_elements::<_, Policy, _>(tag_name, stack, |name, stack, obj| {
             match name {
                 "Arn" => {
@@ -7064,10 +6956,7 @@ impl PolicyDeserializer {
 struct PolicyDescriptionTypeDeserializer;
 impl PolicyDescriptionTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -7087,7 +6976,7 @@ pub struct PolicyDetail {
 struct PolicyDetailDeserializer;
 impl PolicyDetailDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<PolicyDetail, XmlParseError> {
@@ -7114,7 +7003,7 @@ impl PolicyDetailDeserializer {
 struct PolicyDetailListTypeDeserializer;
 impl PolicyDetailListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<PolicyDetail>, XmlParseError> {
@@ -7131,10 +7020,7 @@ impl PolicyDetailListTypeDeserializer {
 struct PolicyDocumentTypeDeserializer;
 impl PolicyDocumentTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = rusoto_core::signature::decode_uri(&characters(stack)?);
         end_element(tag_name, stack)?;
@@ -7145,7 +7031,7 @@ impl PolicyDocumentTypeDeserializer {
 struct PolicyDocumentVersionListTypeDeserializer;
 impl PolicyDocumentVersionListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<PolicyVersion>, XmlParseError> {
@@ -7162,10 +7048,7 @@ impl PolicyDocumentVersionListTypeDeserializer {
 struct PolicyEvaluationDecisionTypeDeserializer;
 impl PolicyEvaluationDecisionTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -7190,7 +7073,7 @@ pub struct PolicyGrantingServiceAccess {
 struct PolicyGrantingServiceAccessDeserializer;
 impl PolicyGrantingServiceAccessDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<PolicyGrantingServiceAccess, XmlParseError> {
@@ -7232,7 +7115,7 @@ impl PolicyGrantingServiceAccessDeserializer {
 struct PolicyGrantingServiceAccessListTypeDeserializer;
 impl PolicyGrantingServiceAccessListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<PolicyGrantingServiceAccess>, XmlParseError> {
@@ -7260,7 +7143,7 @@ pub struct PolicyGroup {
 struct PolicyGroupDeserializer;
 impl PolicyGroupDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<PolicyGroup, XmlParseError> {
@@ -7282,7 +7165,7 @@ impl PolicyGroupDeserializer {
 struct PolicyGroupListTypeDeserializer;
 impl PolicyGroupListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<PolicyGroup>, XmlParseError> {
@@ -7299,10 +7182,7 @@ impl PolicyGroupListTypeDeserializer {
 struct PolicyIdentifierTypeDeserializer;
 impl PolicyIdentifierTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -7313,7 +7193,7 @@ impl PolicyIdentifierTypeDeserializer {
 struct PolicyListTypeDeserializer;
 impl PolicyListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<Policy>, XmlParseError> {
@@ -7330,7 +7210,7 @@ impl PolicyListTypeDeserializer {
 struct PolicyNameListTypeDeserializer;
 impl PolicyNameListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<String>, XmlParseError> {
@@ -7347,10 +7227,7 @@ impl PolicyNameListTypeDeserializer {
 struct PolicyNameTypeDeserializer;
 impl PolicyNameTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -7361,10 +7238,7 @@ impl PolicyNameTypeDeserializer {
 struct PolicyOwnerEntityTypeDeserializer;
 impl PolicyOwnerEntityTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -7375,10 +7249,7 @@ impl PolicyOwnerEntityTypeDeserializer {
 struct PolicyPathTypeDeserializer;
 impl PolicyPathTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -7398,7 +7269,7 @@ pub struct PolicyRole {
 struct PolicyRoleDeserializer;
 impl PolicyRoleDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<PolicyRole, XmlParseError> {
@@ -7419,7 +7290,7 @@ impl PolicyRoleDeserializer {
 struct PolicyRoleListTypeDeserializer;
 impl PolicyRoleListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<PolicyRole>, XmlParseError> {
@@ -7436,10 +7307,7 @@ impl PolicyRoleListTypeDeserializer {
 struct PolicySourceTypeDeserializer;
 impl PolicySourceTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -7450,10 +7318,7 @@ impl PolicySourceTypeDeserializer {
 struct PolicyTypeDeserializer;
 impl PolicyTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -7473,7 +7338,7 @@ pub struct PolicyUser {
 struct PolicyUserDeserializer;
 impl PolicyUserDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<PolicyUser, XmlParseError> {
@@ -7494,7 +7359,7 @@ impl PolicyUserDeserializer {
 struct PolicyUserListTypeDeserializer;
 impl PolicyUserListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<PolicyUser>, XmlParseError> {
@@ -7524,7 +7389,7 @@ pub struct PolicyVersion {
 struct PolicyVersionDeserializer;
 impl PolicyVersionDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<PolicyVersion, XmlParseError> {
@@ -7559,10 +7424,7 @@ impl PolicyVersionDeserializer {
 struct PolicyVersionIdTypeDeserializer;
 impl PolicyVersionIdTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -7582,7 +7444,7 @@ pub struct Position {
 struct PositionDeserializer;
 impl PositionDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Position, XmlParseError> {
@@ -7603,10 +7465,7 @@ impl PositionDeserializer {
 struct PublicKeyFingerprintTypeDeserializer;
 impl PublicKeyFingerprintTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -7617,10 +7476,7 @@ impl PublicKeyFingerprintTypeDeserializer {
 struct PublicKeyIdTypeDeserializer;
 impl PublicKeyIdTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -7631,10 +7487,7 @@ impl PublicKeyIdTypeDeserializer {
 struct PublicKeyMaterialTypeDeserializer;
 impl PublicKeyMaterialTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -7779,10 +7632,7 @@ impl PutUserPolicyRequestSerializer {
 struct ReasonTypeDeserializer;
 impl ReasonTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -7793,10 +7643,7 @@ impl ReasonTypeDeserializer {
 struct RegionNameTypeDeserializer;
 impl RegionNameTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -7883,7 +7730,7 @@ impl RemoveUserFromGroupRequestSerializer {
 struct ReportContentTypeDeserializer;
 impl ReportContentTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<bytes::Bytes, XmlParseError> {
@@ -7897,10 +7744,7 @@ impl ReportContentTypeDeserializer {
 struct ReportFormatTypeDeserializer;
 impl ReportFormatTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -7911,10 +7755,7 @@ impl ReportFormatTypeDeserializer {
 struct ReportStateDescriptionTypeDeserializer;
 impl ReportStateDescriptionTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -7925,10 +7766,7 @@ impl ReportStateDescriptionTypeDeserializer {
 struct ReportStateTypeDeserializer;
 impl ReportStateTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -7972,7 +7810,7 @@ pub struct ResetServiceSpecificCredentialResponse {
 struct ResetServiceSpecificCredentialResponseDeserializer;
 impl ResetServiceSpecificCredentialResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ResetServiceSpecificCredentialResponse, XmlParseError> {
@@ -8010,10 +7848,7 @@ impl ResourceNameListTypeSerializer {
 struct ResourceNameTypeDeserializer;
 impl ResourceNameTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -8039,7 +7874,7 @@ pub struct ResourceSpecificResult {
 struct ResourceSpecificResultDeserializer;
 impl ResourceSpecificResultDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ResourceSpecificResult, XmlParseError> {
@@ -8085,7 +7920,7 @@ impl ResourceSpecificResultDeserializer {
 struct ResourceSpecificResultListTypeDeserializer;
 impl ResourceSpecificResultListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<ResourceSpecificResult>, XmlParseError> {
@@ -8163,10 +7998,7 @@ pub struct Role {
 struct RoleDeserializer;
 impl RoleDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<Role, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<Role, XmlParseError> {
         deserialize_elements::<_, Role, _>(tag_name, stack, |name, stack, obj| {
             match name {
                 "Arn" => {
@@ -8225,10 +8057,7 @@ impl RoleDeserializer {
 struct RoleDescriptionTypeDeserializer;
 impl RoleDescriptionTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -8265,7 +8094,7 @@ pub struct RoleDetail {
 struct RoleDetailDeserializer;
 impl RoleDetailDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<RoleDetail, XmlParseError> {
@@ -8335,7 +8164,7 @@ impl RoleDetailDeserializer {
 struct RoleDetailListTypeDeserializer;
 impl RoleDetailListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<RoleDetail>, XmlParseError> {
@@ -8352,7 +8181,7 @@ impl RoleDetailListTypeDeserializer {
 struct RoleListTypeDeserializer;
 impl RoleListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<Role>, XmlParseError> {
@@ -8369,10 +8198,7 @@ impl RoleListTypeDeserializer {
 struct RoleMaxSessionDurationTypeDeserializer;
 impl RoleMaxSessionDurationTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -8383,10 +8209,7 @@ impl RoleMaxSessionDurationTypeDeserializer {
 struct RoleNameTypeDeserializer;
 impl RoleNameTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -8397,7 +8220,7 @@ impl RoleNameTypeDeserializer {
 struct RoleUsageListTypeDeserializer;
 impl RoleUsageListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<RoleUsageType>, XmlParseError> {
@@ -8423,7 +8246,7 @@ pub struct RoleUsageType {
 struct RoleUsageTypeDeserializer;
 impl RoleUsageTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<RoleUsageType, XmlParseError> {
@@ -8446,10 +8269,7 @@ impl RoleUsageTypeDeserializer {
 struct SAMLMetadataDocumentTypeDeserializer;
 impl SAMLMetadataDocumentTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -8471,7 +8291,7 @@ pub struct SAMLProviderListEntry {
 struct SAMLProviderListEntryDeserializer;
 impl SAMLProviderListEntryDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<SAMLProviderListEntry, XmlParseError> {
@@ -8495,7 +8315,7 @@ impl SAMLProviderListEntryDeserializer {
 struct SAMLProviderListTypeDeserializer;
 impl SAMLProviderListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<SAMLProviderListEntry>, XmlParseError> {
@@ -8531,7 +8351,7 @@ pub struct SSHPublicKey {
 struct SSHPublicKeyDeserializer;
 impl SSHPublicKeyDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<SSHPublicKey, XmlParseError> {
@@ -8567,7 +8387,7 @@ impl SSHPublicKeyDeserializer {
 struct SSHPublicKeyListTypeDeserializer;
 impl SSHPublicKeyListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<SSHPublicKeyMetadata>, XmlParseError> {
@@ -8599,7 +8419,7 @@ pub struct SSHPublicKeyMetadata {
 struct SSHPublicKeyMetadataDeserializer;
 impl SSHPublicKeyMetadataDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<SSHPublicKeyMetadata, XmlParseError> {
@@ -8627,10 +8447,7 @@ impl SSHPublicKeyMetadataDeserializer {
 struct SerialNumberTypeDeserializer;
 impl SerialNumberTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -8652,7 +8469,7 @@ pub struct ServerCertificate {
 struct ServerCertificateDeserializer;
 impl ServerCertificateDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ServerCertificate, XmlParseError> {
@@ -8701,7 +8518,7 @@ pub struct ServerCertificateMetadata {
 struct ServerCertificateMetadataDeserializer;
 impl ServerCertificateMetadataDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ServerCertificateMetadata, XmlParseError> {
@@ -8745,7 +8562,7 @@ impl ServerCertificateMetadataDeserializer {
 struct ServerCertificateMetadataListTypeDeserializer;
 impl ServerCertificateMetadataListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<ServerCertificateMetadata>, XmlParseError> {
@@ -8764,10 +8581,7 @@ impl ServerCertificateMetadataListTypeDeserializer {
 struct ServerCertificateNameTypeDeserializer;
 impl ServerCertificateNameTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -8793,7 +8607,7 @@ pub struct ServiceLastAccessed {
 struct ServiceLastAccessedDeserializer;
 impl ServiceLastAccessedDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ServiceLastAccessed, XmlParseError> {
@@ -8834,10 +8648,7 @@ impl ServiceLastAccessedDeserializer {
 struct ServiceNameDeserializer;
 impl ServiceNameDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -8848,10 +8659,7 @@ impl ServiceNameDeserializer {
 struct ServiceNameTypeDeserializer;
 impl ServiceNameTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -8874,10 +8682,7 @@ impl ServiceNamespaceListTypeSerializer {
 struct ServiceNamespaceTypeDeserializer;
 impl ServiceNamespaceTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -8888,10 +8693,7 @@ impl ServiceNamespaceTypeDeserializer {
 struct ServicePasswordDeserializer;
 impl ServicePasswordDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -8921,7 +8723,7 @@ pub struct ServiceSpecificCredential {
 struct ServiceSpecificCredentialDeserializer;
 impl ServiceSpecificCredentialDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ServiceSpecificCredential, XmlParseError> {
@@ -8968,10 +8770,7 @@ impl ServiceSpecificCredentialDeserializer {
 struct ServiceSpecificCredentialIdDeserializer;
 impl ServiceSpecificCredentialIdDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -8999,7 +8798,7 @@ pub struct ServiceSpecificCredentialMetadata {
 struct ServiceSpecificCredentialMetadataDeserializer;
 impl ServiceSpecificCredentialMetadataDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ServiceSpecificCredentialMetadata, XmlParseError> {
@@ -9042,7 +8841,7 @@ impl ServiceSpecificCredentialMetadataDeserializer {
 struct ServiceSpecificCredentialsListTypeDeserializer;
 impl ServiceSpecificCredentialsListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<ServiceSpecificCredentialMetadata>, XmlParseError> {
@@ -9061,10 +8860,7 @@ impl ServiceSpecificCredentialsListTypeDeserializer {
 struct ServiceUserNameDeserializer;
 impl ServiceUserNameDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -9075,7 +8871,7 @@ impl ServiceUserNameDeserializer {
 struct ServicesLastAccessedDeserializer;
 impl ServicesLastAccessedDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<ServiceLastAccessed>, XmlParseError> {
@@ -9131,7 +8927,7 @@ pub struct SigningCertificate {
 struct SigningCertificateDeserializer;
 impl SigningCertificateDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<SigningCertificate, XmlParseError> {
@@ -9255,7 +9051,7 @@ pub struct SimulatePolicyResponse {
 struct SimulatePolicyResponseDeserializer;
 impl SimulatePolicyResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<SimulatePolicyResponse, XmlParseError> {
@@ -9398,7 +9194,7 @@ pub struct Statement {
 struct StatementDeserializer;
 impl StatementDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Statement, XmlParseError> {
@@ -9433,7 +9229,7 @@ impl StatementDeserializer {
 struct StatementListTypeDeserializer;
 impl StatementListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<Statement>, XmlParseError> {
@@ -9450,10 +9246,7 @@ impl StatementListTypeDeserializer {
 struct StatusTypeDeserializer;
 impl StatusTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -9464,10 +9257,7 @@ impl StatusTypeDeserializer {
 struct StringTypeDeserializer;
 impl StringTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -9478,10 +9268,7 @@ impl StringTypeDeserializer {
 struct SummaryKeyTypeDeserializer;
 impl SummaryKeyTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -9492,7 +9279,7 @@ impl SummaryKeyTypeDeserializer {
 struct SummaryMapTypeDeserializer;
 impl SummaryMapTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<::std::collections::HashMap<String, i64>, XmlParseError> {
@@ -9515,10 +9302,7 @@ impl SummaryMapTypeDeserializer {
 struct SummaryValueTypeDeserializer;
 impl SummaryValueTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -9538,10 +9322,7 @@ pub struct Tag {
 struct TagDeserializer;
 impl TagDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<Tag, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<Tag, XmlParseError> {
         deserialize_elements::<_, Tag, _>(tag_name, stack, |name, stack, obj| {
             match name {
                 "Key" => {
@@ -9585,10 +9366,7 @@ impl TagKeyListTypeSerializer {
 struct TagKeyTypeDeserializer;
 impl TagKeyTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -9599,7 +9377,7 @@ impl TagKeyTypeDeserializer {
 struct TagListTypeDeserializer;
 impl TagListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<Tag>, XmlParseError> {
@@ -9672,10 +9450,7 @@ impl TagUserRequestSerializer {
 struct TagValueTypeDeserializer;
 impl TagValueTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -9686,7 +9461,7 @@ impl TagValueTypeDeserializer {
 struct ThumbprintListTypeDeserializer;
 impl ThumbprintListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<String>, XmlParseError> {
@@ -9715,10 +9490,7 @@ impl ThumbprintListTypeSerializer {
 struct ThumbprintTypeDeserializer;
 impl ThumbprintTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -10031,7 +9803,7 @@ pub struct UpdateRoleDescriptionResponse {
 struct UpdateRoleDescriptionResponseDeserializer;
 impl UpdateRoleDescriptionResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<UpdateRoleDescriptionResponse, XmlParseError> {
@@ -10085,7 +9857,7 @@ pub struct UpdateRoleResponse {}
 struct UpdateRoleResponseDeserializer;
 impl UpdateRoleResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<UpdateRoleResponse, XmlParseError> {
@@ -10136,7 +9908,7 @@ pub struct UpdateSAMLProviderResponse {
 struct UpdateSAMLProviderResponseDeserializer;
 impl UpdateSAMLProviderResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<UpdateSAMLProviderResponse, XmlParseError> {
@@ -10343,7 +10115,7 @@ pub struct UploadSSHPublicKeyResponse {
 struct UploadSSHPublicKeyResponseDeserializer;
 impl UploadSSHPublicKeyResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<UploadSSHPublicKeyResponse, XmlParseError> {
@@ -10416,7 +10188,7 @@ pub struct UploadServerCertificateResponse {
 struct UploadServerCertificateResponseDeserializer;
 impl UploadServerCertificateResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<UploadServerCertificateResponse, XmlParseError> {
@@ -10476,7 +10248,7 @@ pub struct UploadSigningCertificateResponse {
 struct UploadSigningCertificateResponseDeserializer;
 impl UploadSigningCertificateResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<UploadSigningCertificateResponse, XmlParseError> {
@@ -10520,10 +10292,7 @@ pub struct User {
 struct UserDeserializer;
 impl UserDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<User, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<User, XmlParseError> {
         deserialize_elements::<_, User, _>(tag_name, stack, |name, stack, obj| {
             match name {
                 "Arn" => {
@@ -10592,7 +10361,7 @@ pub struct UserDetail {
 struct UserDetailDeserializer;
 impl UserDetailDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<UserDetail, XmlParseError> {
@@ -10652,7 +10421,7 @@ impl UserDetailDeserializer {
 struct UserDetailListTypeDeserializer;
 impl UserDetailListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<UserDetail>, XmlParseError> {
@@ -10669,7 +10438,7 @@ impl UserDetailListTypeDeserializer {
 struct UserListTypeDeserializer;
 impl UserListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<User>, XmlParseError> {
@@ -10686,10 +10455,7 @@ impl UserListTypeDeserializer {
 struct UserNameTypeDeserializer;
 impl UserNameTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -10715,7 +10481,7 @@ pub struct VirtualMFADevice {
 struct VirtualMFADeviceDeserializer;
 impl VirtualMFADeviceDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<VirtualMFADevice, XmlParseError> {
@@ -10750,7 +10516,7 @@ impl VirtualMFADeviceDeserializer {
 struct VirtualMFADeviceListTypeDeserializer;
 impl VirtualMFADeviceListTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<VirtualMFADevice>, XmlParseError> {
@@ -10789,30 +10555,30 @@ impl AddClientIDToOpenIDConnectProviderError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(
-                            AddClientIDToOpenIDConnectProviderError::InvalidInput(String::from(
+                            AddClientIDToOpenIDConnectProviderError::InvalidInput(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(
-                            AddClientIDToOpenIDConnectProviderError::LimitExceeded(String::from(
+                            AddClientIDToOpenIDConnectProviderError::LimitExceeded(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(
-                            AddClientIDToOpenIDConnectProviderError::NoSuchEntity(String::from(
+                            AddClientIDToOpenIDConnectProviderError::NoSuchEntity(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(
-                            AddClientIDToOpenIDConnectProviderError::ServiceFailure(String::from(
+                            AddClientIDToOpenIDConnectProviderError::ServiceFailure(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -10870,31 +10636,29 @@ impl AddRoleToInstanceProfileError {
                 match &parsed_error.code[..] {
                     "EntityAlreadyExists" => {
                         return RusotoError::Service(
-                            AddRoleToInstanceProfileError::EntityAlreadyExists(String::from(
+                            AddRoleToInstanceProfileError::EntityAlreadyExists(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(AddRoleToInstanceProfileError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(AddRoleToInstanceProfileError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(AddRoleToInstanceProfileError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "UnmodifiableEntity" => {
                         return RusotoError::Service(
-                            AddRoleToInstanceProfileError::UnmodifiableEntity(String::from(
-                                parsed_error.message,
-                            )),
+                            AddRoleToInstanceProfileError::UnmodifiableEntity(parsed_error.message),
                         )
                     }
                     _ => {}
@@ -10949,17 +10713,17 @@ impl AddUserToGroupError {
                 match &parsed_error.code[..] {
                     "LimitExceeded" => {
                         return RusotoError::Service(AddUserToGroupError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(AddUserToGroupError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(AddUserToGroupError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -11016,27 +10780,27 @@ impl AttachGroupPolicyError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(AttachGroupPolicyError::InvalidInput(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(AttachGroupPolicyError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(AttachGroupPolicyError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "PolicyNotAttachable" => {
                         return RusotoError::Service(AttachGroupPolicyError::PolicyNotAttachable(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(AttachGroupPolicyError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -11097,32 +10861,32 @@ impl AttachRolePolicyError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(AttachRolePolicyError::InvalidInput(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(AttachRolePolicyError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(AttachRolePolicyError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "PolicyNotAttachable" => {
                         return RusotoError::Service(AttachRolePolicyError::PolicyNotAttachable(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(AttachRolePolicyError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "UnmodifiableEntity" => {
                         return RusotoError::Service(AttachRolePolicyError::UnmodifiableEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -11182,27 +10946,27 @@ impl AttachUserPolicyError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(AttachUserPolicyError::InvalidInput(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(AttachUserPolicyError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(AttachUserPolicyError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "PolicyNotAttachable" => {
                         return RusotoError::Service(AttachUserPolicyError::PolicyNotAttachable(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(AttachUserPolicyError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -11263,34 +11027,34 @@ impl ChangePasswordError {
                 match &parsed_error.code[..] {
                     "EntityTemporarilyUnmodifiable" => {
                         return RusotoError::Service(
-                            ChangePasswordError::EntityTemporarilyUnmodifiable(String::from(
+                            ChangePasswordError::EntityTemporarilyUnmodifiable(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "InvalidUserType" => {
                         return RusotoError::Service(ChangePasswordError::InvalidUserType(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(ChangePasswordError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(ChangePasswordError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "PasswordPolicyViolation" => {
                         return RusotoError::Service(ChangePasswordError::PasswordPolicyViolation(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(ChangePasswordError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -11346,17 +11110,17 @@ impl CreateAccessKeyError {
                 match &parsed_error.code[..] {
                     "LimitExceeded" => {
                         return RusotoError::Service(CreateAccessKeyError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(CreateAccessKeyError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(CreateAccessKeyError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -11409,17 +11173,17 @@ impl CreateAccountAliasError {
                 match &parsed_error.code[..] {
                     "EntityAlreadyExists" => {
                         return RusotoError::Service(CreateAccountAliasError::EntityAlreadyExists(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(CreateAccountAliasError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(CreateAccountAliasError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -11474,22 +11238,22 @@ impl CreateGroupError {
                 match &parsed_error.code[..] {
                     "EntityAlreadyExists" => {
                         return RusotoError::Service(CreateGroupError::EntityAlreadyExists(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "LimitExceeded" => {
-                        return RusotoError::Service(CreateGroupError::LimitExceeded(String::from(
+                        return RusotoError::Service(CreateGroupError::LimitExceeded(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "NoSuchEntity" => {
-                        return RusotoError::Service(CreateGroupError::NoSuchEntity(String::from(
+                        return RusotoError::Service(CreateGroupError::NoSuchEntity(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(CreateGroupError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -11543,19 +11307,17 @@ impl CreateInstanceProfileError {
                 match &parsed_error.code[..] {
                     "EntityAlreadyExists" => {
                         return RusotoError::Service(
-                            CreateInstanceProfileError::EntityAlreadyExists(String::from(
-                                parsed_error.message,
-                            )),
+                            CreateInstanceProfileError::EntityAlreadyExists(parsed_error.message),
                         )
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(CreateInstanceProfileError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(CreateInstanceProfileError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -11612,29 +11374,27 @@ impl CreateLoginProfileError {
                 match &parsed_error.code[..] {
                     "EntityAlreadyExists" => {
                         return RusotoError::Service(CreateLoginProfileError::EntityAlreadyExists(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(CreateLoginProfileError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(CreateLoginProfileError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "PasswordPolicyViolation" => {
                         return RusotoError::Service(
-                            CreateLoginProfileError::PasswordPolicyViolation(String::from(
-                                parsed_error.message,
-                            )),
+                            CreateLoginProfileError::PasswordPolicyViolation(parsed_error.message),
                         )
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(CreateLoginProfileError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -11693,30 +11453,24 @@ impl CreateOpenIDConnectProviderError {
                 match &parsed_error.code[..] {
                     "EntityAlreadyExists" => {
                         return RusotoError::Service(
-                            CreateOpenIDConnectProviderError::EntityAlreadyExists(String::from(
+                            CreateOpenIDConnectProviderError::EntityAlreadyExists(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "InvalidInput" => {
                         return RusotoError::Service(
-                            CreateOpenIDConnectProviderError::InvalidInput(String::from(
-                                parsed_error.message,
-                            )),
+                            CreateOpenIDConnectProviderError::InvalidInput(parsed_error.message),
                         )
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(
-                            CreateOpenIDConnectProviderError::LimitExceeded(String::from(
-                                parsed_error.message,
-                            )),
+                            CreateOpenIDConnectProviderError::LimitExceeded(parsed_error.message),
                         )
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(
-                            CreateOpenIDConnectProviderError::ServiceFailure(String::from(
-                                parsed_error.message,
-                            )),
+                            CreateOpenIDConnectProviderError::ServiceFailure(parsed_error.message),
                         )
                     }
                     _ => {}
@@ -11774,27 +11528,27 @@ impl CreatePolicyError {
                 match &parsed_error.code[..] {
                     "EntityAlreadyExists" => {
                         return RusotoError::Service(CreatePolicyError::EntityAlreadyExists(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "InvalidInput" => {
-                        return RusotoError::Service(CreatePolicyError::InvalidInput(String::from(
+                        return RusotoError::Service(CreatePolicyError::InvalidInput(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(CreatePolicyError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "MalformedPolicyDocument" => {
                         return RusotoError::Service(CreatePolicyError::MalformedPolicyDocument(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(CreatePolicyError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -11853,29 +11607,27 @@ impl CreatePolicyVersionError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(CreatePolicyVersionError::InvalidInput(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(CreatePolicyVersionError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "MalformedPolicyDocument" => {
                         return RusotoError::Service(
-                            CreatePolicyVersionError::MalformedPolicyDocument(String::from(
-                                parsed_error.message,
-                            )),
+                            CreatePolicyVersionError::MalformedPolicyDocument(parsed_error.message),
                         )
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(CreatePolicyVersionError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(CreatePolicyVersionError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -11936,33 +11688,33 @@ impl CreateRoleError {
                 match &parsed_error.code[..] {
                     "ConcurrentModification" => {
                         return RusotoError::Service(CreateRoleError::ConcurrentModification(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "EntityAlreadyExists" => {
                         return RusotoError::Service(CreateRoleError::EntityAlreadyExists(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "InvalidInput" => {
-                        return RusotoError::Service(CreateRoleError::InvalidInput(String::from(
+                        return RusotoError::Service(CreateRoleError::InvalidInput(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "LimitExceeded" => {
-                        return RusotoError::Service(CreateRoleError::LimitExceeded(String::from(
+                        return RusotoError::Service(CreateRoleError::LimitExceeded(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "MalformedPolicyDocument" => {
                         return RusotoError::Service(CreateRoleError::MalformedPolicyDocument(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
-                        return RusotoError::Service(CreateRoleError::ServiceFailure(String::from(
+                        return RusotoError::Service(CreateRoleError::ServiceFailure(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     _ => {}
                 }
@@ -12019,22 +11771,22 @@ impl CreateSAMLProviderError {
                 match &parsed_error.code[..] {
                     "EntityAlreadyExists" => {
                         return RusotoError::Service(CreateSAMLProviderError::EntityAlreadyExists(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "InvalidInput" => {
                         return RusotoError::Service(CreateSAMLProviderError::InvalidInput(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(CreateSAMLProviderError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(CreateSAMLProviderError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -12090,22 +11842,22 @@ impl CreateServiceLinkedRoleError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(CreateServiceLinkedRoleError::InvalidInput(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(CreateServiceLinkedRoleError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(CreateServiceLinkedRoleError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(CreateServiceLinkedRoleError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -12161,22 +11913,22 @@ impl CreateServiceSpecificCredentialError {
                 match &parsed_error.code[..] {
                     "LimitExceeded" => {
                         return RusotoError::Service(
-                            CreateServiceSpecificCredentialError::LimitExceeded(String::from(
+                            CreateServiceSpecificCredentialError::LimitExceeded(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(
-                            CreateServiceSpecificCredentialError::NoSuchEntity(String::from(
+                            CreateServiceSpecificCredentialError::NoSuchEntity(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "NotSupportedService" => {
                         return RusotoError::Service(
                             CreateServiceSpecificCredentialError::ServiceNotSupported(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
@@ -12236,33 +11988,33 @@ impl CreateUserError {
                 match &parsed_error.code[..] {
                     "ConcurrentModification" => {
                         return RusotoError::Service(CreateUserError::ConcurrentModification(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "EntityAlreadyExists" => {
                         return RusotoError::Service(CreateUserError::EntityAlreadyExists(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "InvalidInput" => {
-                        return RusotoError::Service(CreateUserError::InvalidInput(String::from(
+                        return RusotoError::Service(CreateUserError::InvalidInput(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "LimitExceeded" => {
-                        return RusotoError::Service(CreateUserError::LimitExceeded(String::from(
+                        return RusotoError::Service(CreateUserError::LimitExceeded(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "NoSuchEntity" => {
-                        return RusotoError::Service(CreateUserError::NoSuchEntity(String::from(
+                        return RusotoError::Service(CreateUserError::NoSuchEntity(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "ServiceFailure" => {
-                        return RusotoError::Service(CreateUserError::ServiceFailure(String::from(
+                        return RusotoError::Service(CreateUserError::ServiceFailure(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     _ => {}
                 }
@@ -12317,19 +12069,17 @@ impl CreateVirtualMFADeviceError {
                 match &parsed_error.code[..] {
                     "EntityAlreadyExists" => {
                         return RusotoError::Service(
-                            CreateVirtualMFADeviceError::EntityAlreadyExists(String::from(
-                                parsed_error.message,
-                            )),
+                            CreateVirtualMFADeviceError::EntityAlreadyExists(parsed_error.message),
                         )
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(CreateVirtualMFADeviceError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(CreateVirtualMFADeviceError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -12384,24 +12134,24 @@ impl DeactivateMFADeviceError {
                 match &parsed_error.code[..] {
                     "EntityTemporarilyUnmodifiable" => {
                         return RusotoError::Service(
-                            DeactivateMFADeviceError::EntityTemporarilyUnmodifiable(String::from(
+                            DeactivateMFADeviceError::EntityTemporarilyUnmodifiable(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(DeactivateMFADeviceError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(DeactivateMFADeviceError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(DeactivateMFADeviceError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -12455,17 +12205,17 @@ impl DeleteAccessKeyError {
                 match &parsed_error.code[..] {
                     "LimitExceeded" => {
                         return RusotoError::Service(DeleteAccessKeyError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(DeleteAccessKeyError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(DeleteAccessKeyError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -12518,17 +12268,17 @@ impl DeleteAccountAliasError {
                 match &parsed_error.code[..] {
                     "LimitExceeded" => {
                         return RusotoError::Service(DeleteAccountAliasError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(DeleteAccountAliasError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(DeleteAccountAliasError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -12583,23 +12333,17 @@ impl DeleteAccountPasswordPolicyError {
                 match &parsed_error.code[..] {
                     "LimitExceeded" => {
                         return RusotoError::Service(
-                            DeleteAccountPasswordPolicyError::LimitExceeded(String::from(
-                                parsed_error.message,
-                            )),
+                            DeleteAccountPasswordPolicyError::LimitExceeded(parsed_error.message),
                         )
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(
-                            DeleteAccountPasswordPolicyError::NoSuchEntity(String::from(
-                                parsed_error.message,
-                            )),
+                            DeleteAccountPasswordPolicyError::NoSuchEntity(parsed_error.message),
                         )
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(
-                            DeleteAccountPasswordPolicyError::ServiceFailure(String::from(
-                                parsed_error.message,
-                            )),
+                            DeleteAccountPasswordPolicyError::ServiceFailure(parsed_error.message),
                         )
                     }
                     _ => {}
@@ -12654,22 +12398,22 @@ impl DeleteGroupError {
                 match &parsed_error.code[..] {
                     "DeleteConflict" => {
                         return RusotoError::Service(DeleteGroupError::DeleteConflict(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "LimitExceeded" => {
-                        return RusotoError::Service(DeleteGroupError::LimitExceeded(String::from(
+                        return RusotoError::Service(DeleteGroupError::LimitExceeded(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "NoSuchEntity" => {
-                        return RusotoError::Service(DeleteGroupError::NoSuchEntity(String::from(
+                        return RusotoError::Service(DeleteGroupError::NoSuchEntity(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(DeleteGroupError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -12723,17 +12467,17 @@ impl DeleteGroupPolicyError {
                 match &parsed_error.code[..] {
                     "LimitExceeded" => {
                         return RusotoError::Service(DeleteGroupPolicyError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(DeleteGroupPolicyError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(DeleteGroupPolicyError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -12788,22 +12532,22 @@ impl DeleteInstanceProfileError {
                 match &parsed_error.code[..] {
                     "DeleteConflict" => {
                         return RusotoError::Service(DeleteInstanceProfileError::DeleteConflict(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(DeleteInstanceProfileError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(DeleteInstanceProfileError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(DeleteInstanceProfileError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -12859,24 +12603,24 @@ impl DeleteLoginProfileError {
                 match &parsed_error.code[..] {
                     "EntityTemporarilyUnmodifiable" => {
                         return RusotoError::Service(
-                            DeleteLoginProfileError::EntityTemporarilyUnmodifiable(String::from(
+                            DeleteLoginProfileError::EntityTemporarilyUnmodifiable(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(DeleteLoginProfileError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(DeleteLoginProfileError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(DeleteLoginProfileError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -12932,23 +12676,17 @@ impl DeleteOpenIDConnectProviderError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(
-                            DeleteOpenIDConnectProviderError::InvalidInput(String::from(
-                                parsed_error.message,
-                            )),
+                            DeleteOpenIDConnectProviderError::InvalidInput(parsed_error.message),
                         )
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(
-                            DeleteOpenIDConnectProviderError::NoSuchEntity(String::from(
-                                parsed_error.message,
-                            )),
+                            DeleteOpenIDConnectProviderError::NoSuchEntity(parsed_error.message),
                         )
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(
-                            DeleteOpenIDConnectProviderError::ServiceFailure(String::from(
-                                parsed_error.message,
-                            )),
+                            DeleteOpenIDConnectProviderError::ServiceFailure(parsed_error.message),
                         )
                     }
                     _ => {}
@@ -13005,27 +12743,27 @@ impl DeletePolicyError {
                 match &parsed_error.code[..] {
                     "DeleteConflict" => {
                         return RusotoError::Service(DeletePolicyError::DeleteConflict(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "InvalidInput" => {
-                        return RusotoError::Service(DeletePolicyError::InvalidInput(String::from(
+                        return RusotoError::Service(DeletePolicyError::InvalidInput(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(DeletePolicyError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
-                        return RusotoError::Service(DeletePolicyError::NoSuchEntity(String::from(
+                        return RusotoError::Service(DeletePolicyError::NoSuchEntity(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(DeletePolicyError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -13084,27 +12822,27 @@ impl DeletePolicyVersionError {
                 match &parsed_error.code[..] {
                     "DeleteConflict" => {
                         return RusotoError::Service(DeletePolicyVersionError::DeleteConflict(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "InvalidInput" => {
                         return RusotoError::Service(DeletePolicyVersionError::InvalidInput(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(DeletePolicyVersionError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(DeletePolicyVersionError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(DeletePolicyVersionError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -13165,32 +12903,32 @@ impl DeleteRoleError {
                 match &parsed_error.code[..] {
                     "ConcurrentModification" => {
                         return RusotoError::Service(DeleteRoleError::ConcurrentModification(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "DeleteConflict" => {
-                        return RusotoError::Service(DeleteRoleError::DeleteConflict(String::from(
+                        return RusotoError::Service(DeleteRoleError::DeleteConflict(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "LimitExceeded" => {
-                        return RusotoError::Service(DeleteRoleError::LimitExceeded(String::from(
+                        return RusotoError::Service(DeleteRoleError::LimitExceeded(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "NoSuchEntity" => {
-                        return RusotoError::Service(DeleteRoleError::NoSuchEntity(String::from(
+                        return RusotoError::Service(DeleteRoleError::NoSuchEntity(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "ServiceFailure" => {
-                        return RusotoError::Service(DeleteRoleError::ServiceFailure(String::from(
+                        return RusotoError::Service(DeleteRoleError::ServiceFailure(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "UnmodifiableEntity" => {
                         return RusotoError::Service(DeleteRoleError::UnmodifiableEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -13248,23 +12986,21 @@ impl DeleteRolePermissionsBoundaryError {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
                         return RusotoError::Service(
-                            DeleteRolePermissionsBoundaryError::NoSuchEntity(String::from(
-                                parsed_error.message,
-                            )),
+                            DeleteRolePermissionsBoundaryError::NoSuchEntity(parsed_error.message),
                         )
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(
-                            DeleteRolePermissionsBoundaryError::ServiceFailure(String::from(
+                            DeleteRolePermissionsBoundaryError::ServiceFailure(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "UnmodifiableEntity" => {
                         return RusotoError::Service(
-                            DeleteRolePermissionsBoundaryError::UnmodifiableEntity(String::from(
+                            DeleteRolePermissionsBoundaryError::UnmodifiableEntity(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -13319,22 +13055,22 @@ impl DeleteRolePolicyError {
                 match &parsed_error.code[..] {
                     "LimitExceeded" => {
                         return RusotoError::Service(DeleteRolePolicyError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(DeleteRolePolicyError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(DeleteRolePolicyError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "UnmodifiableEntity" => {
                         return RusotoError::Service(DeleteRolePolicyError::UnmodifiableEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -13390,22 +13126,22 @@ impl DeleteSAMLProviderError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(DeleteSAMLProviderError::InvalidInput(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(DeleteSAMLProviderError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(DeleteSAMLProviderError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(DeleteSAMLProviderError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -13455,7 +13191,7 @@ impl DeleteSSHPublicKeyError {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
                         return RusotoError::Service(DeleteSSHPublicKeyError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -13508,22 +13244,22 @@ impl DeleteServerCertificateError {
                 match &parsed_error.code[..] {
                     "DeleteConflict" => {
                         return RusotoError::Service(DeleteServerCertificateError::DeleteConflict(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(DeleteServerCertificateError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(DeleteServerCertificateError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(DeleteServerCertificateError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -13577,17 +13313,17 @@ impl DeleteServiceLinkedRoleError {
                 match &parsed_error.code[..] {
                     "LimitExceeded" => {
                         return RusotoError::Service(DeleteServiceLinkedRoleError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(DeleteServiceLinkedRoleError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(DeleteServiceLinkedRoleError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -13638,9 +13374,9 @@ impl DeleteServiceSpecificCredentialError {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
                         return RusotoError::Service(
-                            DeleteServiceSpecificCredentialError::NoSuchEntity(String::from(
+                            DeleteServiceSpecificCredentialError::NoSuchEntity(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -13691,17 +13427,17 @@ impl DeleteSigningCertificateError {
                 match &parsed_error.code[..] {
                     "LimitExceeded" => {
                         return RusotoError::Service(DeleteSigningCertificateError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(DeleteSigningCertificateError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(DeleteSigningCertificateError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -13758,28 +13494,28 @@ impl DeleteUserError {
                 match &parsed_error.code[..] {
                     "ConcurrentModification" => {
                         return RusotoError::Service(DeleteUserError::ConcurrentModification(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "DeleteConflict" => {
-                        return RusotoError::Service(DeleteUserError::DeleteConflict(String::from(
+                        return RusotoError::Service(DeleteUserError::DeleteConflict(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "LimitExceeded" => {
-                        return RusotoError::Service(DeleteUserError::LimitExceeded(String::from(
+                        return RusotoError::Service(DeleteUserError::LimitExceeded(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "NoSuchEntity" => {
-                        return RusotoError::Service(DeleteUserError::NoSuchEntity(String::from(
+                        return RusotoError::Service(DeleteUserError::NoSuchEntity(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "ServiceFailure" => {
-                        return RusotoError::Service(DeleteUserError::ServiceFailure(String::from(
+                        return RusotoError::Service(DeleteUserError::ServiceFailure(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     _ => {}
                 }
@@ -13833,16 +13569,14 @@ impl DeleteUserPermissionsBoundaryError {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
                         return RusotoError::Service(
-                            DeleteUserPermissionsBoundaryError::NoSuchEntity(String::from(
-                                parsed_error.message,
-                            )),
+                            DeleteUserPermissionsBoundaryError::NoSuchEntity(parsed_error.message),
                         )
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(
-                            DeleteUserPermissionsBoundaryError::ServiceFailure(String::from(
+                            DeleteUserPermissionsBoundaryError::ServiceFailure(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -13894,17 +13628,17 @@ impl DeleteUserPolicyError {
                 match &parsed_error.code[..] {
                     "LimitExceeded" => {
                         return RusotoError::Service(DeleteUserPolicyError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(DeleteUserPolicyError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(DeleteUserPolicyError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -13959,22 +13693,22 @@ impl DeleteVirtualMFADeviceError {
                 match &parsed_error.code[..] {
                     "DeleteConflict" => {
                         return RusotoError::Service(DeleteVirtualMFADeviceError::DeleteConflict(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(DeleteVirtualMFADeviceError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(DeleteVirtualMFADeviceError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(DeleteVirtualMFADeviceError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -14030,22 +13764,22 @@ impl DetachGroupPolicyError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(DetachGroupPolicyError::InvalidInput(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(DetachGroupPolicyError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(DetachGroupPolicyError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(DetachGroupPolicyError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -14103,27 +13837,27 @@ impl DetachRolePolicyError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(DetachRolePolicyError::InvalidInput(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(DetachRolePolicyError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(DetachRolePolicyError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(DetachRolePolicyError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "UnmodifiableEntity" => {
                         return RusotoError::Service(DetachRolePolicyError::UnmodifiableEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -14180,22 +13914,22 @@ impl DetachUserPolicyError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(DetachUserPolicyError::InvalidInput(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(DetachUserPolicyError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(DetachUserPolicyError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(DetachUserPolicyError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -14255,36 +13989,34 @@ impl EnableMFADeviceError {
                 match &parsed_error.code[..] {
                     "EntityAlreadyExists" => {
                         return RusotoError::Service(EnableMFADeviceError::EntityAlreadyExists(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "EntityTemporarilyUnmodifiable" => {
                         return RusotoError::Service(
-                            EnableMFADeviceError::EntityTemporarilyUnmodifiable(String::from(
+                            EnableMFADeviceError::EntityTemporarilyUnmodifiable(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "InvalidAuthenticationCode" => {
                         return RusotoError::Service(
-                            EnableMFADeviceError::InvalidAuthenticationCode(String::from(
-                                parsed_error.message,
-                            )),
+                            EnableMFADeviceError::InvalidAuthenticationCode(parsed_error.message),
                         )
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(EnableMFADeviceError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(EnableMFADeviceError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(EnableMFADeviceError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -14338,12 +14070,12 @@ impl GenerateCredentialReportError {
                 match &parsed_error.code[..] {
                     "LimitExceeded" => {
                         return RusotoError::Service(GenerateCredentialReportError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(GenerateCredentialReportError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -14395,16 +14127,16 @@ impl GenerateServiceLastAccessedDetailsError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(
-                            GenerateServiceLastAccessedDetailsError::InvalidInput(String::from(
+                            GenerateServiceLastAccessedDetailsError::InvalidInput(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(
-                            GenerateServiceLastAccessedDetailsError::NoSuchEntity(String::from(
+                            GenerateServiceLastAccessedDetailsError::NoSuchEntity(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -14452,7 +14184,7 @@ impl GetAccessKeyLastUsedError {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
                         return RusotoError::Service(GetAccessKeyLastUsedError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -14501,9 +14233,9 @@ impl GetAccountAuthorizationDetailsError {
                 match &parsed_error.code[..] {
                     "ServiceFailure" => {
                         return RusotoError::Service(
-                            GetAccountAuthorizationDetailsError::ServiceFailure(String::from(
+                            GetAccountAuthorizationDetailsError::ServiceFailure(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -14552,12 +14284,12 @@ impl GetAccountPasswordPolicyError {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
                         return RusotoError::Service(GetAccountPasswordPolicyError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(GetAccountPasswordPolicyError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -14605,7 +14337,7 @@ impl GetAccountSummaryError {
                 match &parsed_error.code[..] {
                     "ServiceFailure" => {
                         return RusotoError::Service(GetAccountSummaryError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -14654,9 +14386,7 @@ impl GetContextKeysForCustomPolicyError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(
-                            GetContextKeysForCustomPolicyError::InvalidInput(String::from(
-                                parsed_error.message,
-                            )),
+                            GetContextKeysForCustomPolicyError::InvalidInput(parsed_error.message),
                         )
                     }
                     _ => {}
@@ -14707,16 +14437,16 @@ impl GetContextKeysForPrincipalPolicyError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(
-                            GetContextKeysForPrincipalPolicyError::InvalidInput(String::from(
+                            GetContextKeysForPrincipalPolicyError::InvalidInput(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(
-                            GetContextKeysForPrincipalPolicyError::NoSuchEntity(String::from(
+                            GetContextKeysForPrincipalPolicyError::NoSuchEntity(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -14770,28 +14500,26 @@ impl GetCredentialReportError {
                 match &parsed_error.code[..] {
                     "ReportExpired" => {
                         return RusotoError::Service(
-                            GetCredentialReportError::CredentialReportExpired(String::from(
-                                parsed_error.message,
-                            )),
+                            GetCredentialReportError::CredentialReportExpired(parsed_error.message),
                         )
                     }
                     "ReportNotPresent" => {
                         return RusotoError::Service(
-                            GetCredentialReportError::CredentialReportNotPresent(String::from(
+                            GetCredentialReportError::CredentialReportNotPresent(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "ReportInProgress" => {
                         return RusotoError::Service(
-                            GetCredentialReportError::CredentialReportNotReady(String::from(
+                            GetCredentialReportError::CredentialReportNotReady(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(GetCredentialReportError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -14842,14 +14570,14 @@ impl GetGroupError {
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
-                        return RusotoError::Service(GetGroupError::NoSuchEntity(String::from(
+                        return RusotoError::Service(GetGroupError::NoSuchEntity(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "ServiceFailure" => {
-                        return RusotoError::Service(GetGroupError::ServiceFailure(String::from(
+                        return RusotoError::Service(GetGroupError::ServiceFailure(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     _ => {}
                 }
@@ -14898,12 +14626,12 @@ impl GetGroupPolicyError {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
                         return RusotoError::Service(GetGroupPolicyError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(GetGroupPolicyError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -14953,12 +14681,12 @@ impl GetInstanceProfileError {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
                         return RusotoError::Service(GetInstanceProfileError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(GetInstanceProfileError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -15008,12 +14736,12 @@ impl GetLoginProfileError {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
                         return RusotoError::Service(GetLoginProfileError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(GetLoginProfileError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -15065,17 +14793,17 @@ impl GetOpenIDConnectProviderError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(GetOpenIDConnectProviderError::InvalidInput(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(GetOpenIDConnectProviderError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(GetOpenIDConnectProviderError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -15127,19 +14855,19 @@ impl GetPolicyError {
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
-                        return RusotoError::Service(GetPolicyError::InvalidInput(String::from(
+                        return RusotoError::Service(GetPolicyError::InvalidInput(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "NoSuchEntity" => {
-                        return RusotoError::Service(GetPolicyError::NoSuchEntity(String::from(
+                        return RusotoError::Service(GetPolicyError::NoSuchEntity(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "ServiceFailure" => {
-                        return RusotoError::Service(GetPolicyError::ServiceFailure(String::from(
+                        return RusotoError::Service(GetPolicyError::ServiceFailure(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     _ => {}
                 }
@@ -15191,17 +14919,17 @@ impl GetPolicyVersionError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(GetPolicyVersionError::InvalidInput(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(GetPolicyVersionError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(GetPolicyVersionError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -15251,14 +14979,14 @@ impl GetRoleError {
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
-                        return RusotoError::Service(GetRoleError::NoSuchEntity(String::from(
+                        return RusotoError::Service(GetRoleError::NoSuchEntity(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "ServiceFailure" => {
-                        return RusotoError::Service(GetRoleError::ServiceFailure(String::from(
+                        return RusotoError::Service(GetRoleError::ServiceFailure(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     _ => {}
                 }
@@ -15307,12 +15035,12 @@ impl GetRolePolicyError {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
                         return RusotoError::Service(GetRolePolicyError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(GetRolePolicyError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -15364,17 +15092,17 @@ impl GetSAMLProviderError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(GetSAMLProviderError::InvalidInput(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(GetSAMLProviderError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(GetSAMLProviderError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -15425,14 +15153,14 @@ impl GetSSHPublicKeyError {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
                         return RusotoError::Service(GetSSHPublicKeyError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "UnrecognizedPublicKeyEncoding" => {
                         return RusotoError::Service(
-                            GetSSHPublicKeyError::UnrecognizedPublicKeyEncoding(String::from(
+                            GetSSHPublicKeyError::UnrecognizedPublicKeyEncoding(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -15482,12 +15210,12 @@ impl GetServerCertificateError {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
                         return RusotoError::Service(GetServerCertificateError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(GetServerCertificateError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -15539,16 +15267,12 @@ impl GetServiceLastAccessedDetailsError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(
-                            GetServiceLastAccessedDetailsError::InvalidInput(String::from(
-                                parsed_error.message,
-                            )),
+                            GetServiceLastAccessedDetailsError::InvalidInput(parsed_error.message),
                         )
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(
-                            GetServiceLastAccessedDetailsError::NoSuchEntity(String::from(
-                                parsed_error.message,
-                            )),
+                            GetServiceLastAccessedDetailsError::NoSuchEntity(parsed_error.message),
                         )
                     }
                     _ => {}
@@ -15601,14 +15325,14 @@ impl GetServiceLastAccessedDetailsWithEntitiesError {
                     "InvalidInput" => {
                         return RusotoError::Service(
                             GetServiceLastAccessedDetailsWithEntitiesError::InvalidInput(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(
                             GetServiceLastAccessedDetailsWithEntitiesError::NoSuchEntity(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
@@ -15663,23 +15387,23 @@ impl GetServiceLinkedRoleDeletionStatusError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(
-                            GetServiceLinkedRoleDeletionStatusError::InvalidInput(String::from(
+                            GetServiceLinkedRoleDeletionStatusError::InvalidInput(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(
-                            GetServiceLinkedRoleDeletionStatusError::NoSuchEntity(String::from(
+                            GetServiceLinkedRoleDeletionStatusError::NoSuchEntity(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(
-                            GetServiceLinkedRoleDeletionStatusError::ServiceFailure(String::from(
+                            GetServiceLinkedRoleDeletionStatusError::ServiceFailure(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -15729,14 +15453,14 @@ impl GetUserError {
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
-                        return RusotoError::Service(GetUserError::NoSuchEntity(String::from(
+                        return RusotoError::Service(GetUserError::NoSuchEntity(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "ServiceFailure" => {
-                        return RusotoError::Service(GetUserError::ServiceFailure(String::from(
+                        return RusotoError::Service(GetUserError::ServiceFailure(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     _ => {}
                 }
@@ -15785,12 +15509,12 @@ impl GetUserPolicyError {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
                         return RusotoError::Service(GetUserPolicyError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(GetUserPolicyError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -15840,12 +15564,12 @@ impl ListAccessKeysError {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
                         return RusotoError::Service(ListAccessKeysError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(ListAccessKeysError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -15893,7 +15617,7 @@ impl ListAccountAliasesError {
                 match &parsed_error.code[..] {
                     "ServiceFailure" => {
                         return RusotoError::Service(ListAccountAliasesError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -15944,19 +15668,17 @@ impl ListAttachedGroupPoliciesError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(ListAttachedGroupPoliciesError::InvalidInput(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(ListAttachedGroupPoliciesError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(
-                            ListAttachedGroupPoliciesError::ServiceFailure(String::from(
-                                parsed_error.message,
-                            )),
+                            ListAttachedGroupPoliciesError::ServiceFailure(parsed_error.message),
                         )
                     }
                     _ => {}
@@ -16009,17 +15731,17 @@ impl ListAttachedRolePoliciesError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(ListAttachedRolePoliciesError::InvalidInput(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(ListAttachedRolePoliciesError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(ListAttachedRolePoliciesError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -16072,17 +15794,17 @@ impl ListAttachedUserPoliciesError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(ListAttachedUserPoliciesError::InvalidInput(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(ListAttachedUserPoliciesError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(ListAttachedUserPoliciesError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -16135,17 +15857,17 @@ impl ListEntitiesForPolicyError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(ListEntitiesForPolicyError::InvalidInput(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(ListEntitiesForPolicyError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(ListEntitiesForPolicyError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -16196,12 +15918,12 @@ impl ListGroupPoliciesError {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
                         return RusotoError::Service(ListGroupPoliciesError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(ListGroupPoliciesError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -16248,9 +15970,9 @@ impl ListGroupsError {
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
                     "ServiceFailure" => {
-                        return RusotoError::Service(ListGroupsError::ServiceFailure(String::from(
+                        return RusotoError::Service(ListGroupsError::ServiceFailure(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     _ => {}
                 }
@@ -16298,12 +16020,12 @@ impl ListGroupsForUserError {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
                         return RusotoError::Service(ListGroupsForUserError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(ListGroupsForUserError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -16351,7 +16073,7 @@ impl ListInstanceProfilesError {
                 match &parsed_error.code[..] {
                     "ServiceFailure" => {
                         return RusotoError::Service(ListInstanceProfilesError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -16402,16 +16124,12 @@ impl ListInstanceProfilesForRoleError {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
                         return RusotoError::Service(
-                            ListInstanceProfilesForRoleError::NoSuchEntity(String::from(
-                                parsed_error.message,
-                            )),
+                            ListInstanceProfilesForRoleError::NoSuchEntity(parsed_error.message),
                         )
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(
-                            ListInstanceProfilesForRoleError::ServiceFailure(String::from(
-                                parsed_error.message,
-                            )),
+                            ListInstanceProfilesForRoleError::ServiceFailure(parsed_error.message),
                         )
                     }
                     _ => {}
@@ -16461,12 +16179,12 @@ impl ListMFADevicesError {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
                         return RusotoError::Service(ListMFADevicesError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(ListMFADevicesError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -16516,9 +16234,7 @@ impl ListOpenIDConnectProvidersError {
                 match &parsed_error.code[..] {
                     "ServiceFailure" => {
                         return RusotoError::Service(
-                            ListOpenIDConnectProvidersError::ServiceFailure(String::from(
-                                parsed_error.message,
-                            )),
+                            ListOpenIDConnectProvidersError::ServiceFailure(parsed_error.message),
                         )
                     }
                     _ => {}
@@ -16565,7 +16281,7 @@ impl ListPoliciesError {
                 match &parsed_error.code[..] {
                     "ServiceFailure" => {
                         return RusotoError::Service(ListPoliciesError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -16616,16 +16332,16 @@ impl ListPoliciesGrantingServiceAccessError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(
-                            ListPoliciesGrantingServiceAccessError::InvalidInput(String::from(
+                            ListPoliciesGrantingServiceAccessError::InvalidInput(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(
-                            ListPoliciesGrantingServiceAccessError::NoSuchEntity(String::from(
+                            ListPoliciesGrantingServiceAccessError::NoSuchEntity(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -16677,17 +16393,17 @@ impl ListPolicyVersionsError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(ListPolicyVersionsError::InvalidInput(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(ListPolicyVersionsError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(ListPolicyVersionsError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -16738,12 +16454,12 @@ impl ListRolePoliciesError {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
                         return RusotoError::Service(ListRolePoliciesError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(ListRolePoliciesError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -16792,13 +16508,13 @@ impl ListRoleTagsError {
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
-                        return RusotoError::Service(ListRoleTagsError::NoSuchEntity(String::from(
+                        return RusotoError::Service(ListRoleTagsError::NoSuchEntity(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(ListRoleTagsError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -16845,9 +16561,9 @@ impl ListRolesError {
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
                     "ServiceFailure" => {
-                        return RusotoError::Service(ListRolesError::ServiceFailure(String::from(
+                        return RusotoError::Service(ListRolesError::ServiceFailure(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     _ => {}
                 }
@@ -16893,7 +16609,7 @@ impl ListSAMLProvidersError {
                 match &parsed_error.code[..] {
                     "ServiceFailure" => {
                         return RusotoError::Service(ListSAMLProvidersError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -16940,7 +16656,7 @@ impl ListSSHPublicKeysError {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
                         return RusotoError::Service(ListSSHPublicKeysError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -16987,7 +16703,7 @@ impl ListServerCertificatesError {
                 match &parsed_error.code[..] {
                     "ServiceFailure" => {
                         return RusotoError::Service(ListServerCertificatesError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -17038,16 +16754,14 @@ impl ListServiceSpecificCredentialsError {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
                         return RusotoError::Service(
-                            ListServiceSpecificCredentialsError::NoSuchEntity(String::from(
-                                parsed_error.message,
-                            )),
+                            ListServiceSpecificCredentialsError::NoSuchEntity(parsed_error.message),
                         )
                     }
                     "NotSupportedService" => {
                         return RusotoError::Service(
-                            ListServiceSpecificCredentialsError::ServiceNotSupported(String::from(
+                            ListServiceSpecificCredentialsError::ServiceNotSupported(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -17097,12 +16811,12 @@ impl ListSigningCertificatesError {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
                         return RusotoError::Service(ListSigningCertificatesError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(ListSigningCertificatesError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -17152,12 +16866,12 @@ impl ListUserPoliciesError {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
                         return RusotoError::Service(ListUserPoliciesError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(ListUserPoliciesError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -17206,13 +16920,13 @@ impl ListUserTagsError {
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
-                        return RusotoError::Service(ListUserTagsError::NoSuchEntity(String::from(
+                        return RusotoError::Service(ListUserTagsError::NoSuchEntity(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(ListUserTagsError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -17259,9 +16973,9 @@ impl ListUsersError {
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
                     "ServiceFailure" => {
-                        return RusotoError::Service(ListUsersError::ServiceFailure(String::from(
+                        return RusotoError::Service(ListUsersError::ServiceFailure(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     _ => {}
                 }
@@ -17350,22 +17064,22 @@ impl PutGroupPolicyError {
                 match &parsed_error.code[..] {
                     "LimitExceeded" => {
                         return RusotoError::Service(PutGroupPolicyError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "MalformedPolicyDocument" => {
                         return RusotoError::Service(PutGroupPolicyError::MalformedPolicyDocument(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(PutGroupPolicyError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(PutGroupPolicyError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -17425,33 +17139,31 @@ impl PutRolePermissionsBoundaryError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(PutRolePermissionsBoundaryError::InvalidInput(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(PutRolePermissionsBoundaryError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "PolicyNotAttachable" => {
                         return RusotoError::Service(
-                            PutRolePermissionsBoundaryError::PolicyNotAttachable(String::from(
+                            PutRolePermissionsBoundaryError::PolicyNotAttachable(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(
-                            PutRolePermissionsBoundaryError::ServiceFailure(String::from(
-                                parsed_error.message,
-                            )),
+                            PutRolePermissionsBoundaryError::ServiceFailure(parsed_error.message),
                         )
                     }
                     "UnmodifiableEntity" => {
                         return RusotoError::Service(
-                            PutRolePermissionsBoundaryError::UnmodifiableEntity(String::from(
+                            PutRolePermissionsBoundaryError::UnmodifiableEntity(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -17510,27 +17222,27 @@ impl PutRolePolicyError {
                 match &parsed_error.code[..] {
                     "LimitExceeded" => {
                         return RusotoError::Service(PutRolePolicyError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "MalformedPolicyDocument" => {
                         return RusotoError::Service(PutRolePolicyError::MalformedPolicyDocument(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(PutRolePolicyError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(PutRolePolicyError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "UnmodifiableEntity" => {
                         return RusotoError::Service(PutRolePolicyError::UnmodifiableEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -17589,26 +17301,24 @@ impl PutUserPermissionsBoundaryError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(PutUserPermissionsBoundaryError::InvalidInput(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(PutUserPermissionsBoundaryError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "PolicyNotAttachable" => {
                         return RusotoError::Service(
-                            PutUserPermissionsBoundaryError::PolicyNotAttachable(String::from(
+                            PutUserPermissionsBoundaryError::PolicyNotAttachable(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(
-                            PutUserPermissionsBoundaryError::ServiceFailure(String::from(
-                                parsed_error.message,
-                            )),
+                            PutUserPermissionsBoundaryError::ServiceFailure(parsed_error.message),
                         )
                     }
                     _ => {}
@@ -17664,22 +17374,22 @@ impl PutUserPolicyError {
                 match &parsed_error.code[..] {
                     "LimitExceeded" => {
                         return RusotoError::Service(PutUserPolicyError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "MalformedPolicyDocument" => {
                         return RusotoError::Service(PutUserPolicyError::MalformedPolicyDocument(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(PutUserPolicyError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(PutUserPolicyError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -17736,21 +17446,21 @@ impl RemoveClientIDFromOpenIDConnectProviderError {
                     "InvalidInput" => {
                         return RusotoError::Service(
                             RemoveClientIDFromOpenIDConnectProviderError::InvalidInput(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(
                             RemoveClientIDFromOpenIDConnectProviderError::NoSuchEntity(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(
                             RemoveClientIDFromOpenIDConnectProviderError::ServiceFailure(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
@@ -17808,30 +17518,26 @@ impl RemoveRoleFromInstanceProfileError {
                 match &parsed_error.code[..] {
                     "LimitExceeded" => {
                         return RusotoError::Service(
-                            RemoveRoleFromInstanceProfileError::LimitExceeded(String::from(
-                                parsed_error.message,
-                            )),
+                            RemoveRoleFromInstanceProfileError::LimitExceeded(parsed_error.message),
                         )
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(
-                            RemoveRoleFromInstanceProfileError::NoSuchEntity(String::from(
-                                parsed_error.message,
-                            )),
+                            RemoveRoleFromInstanceProfileError::NoSuchEntity(parsed_error.message),
                         )
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(
-                            RemoveRoleFromInstanceProfileError::ServiceFailure(String::from(
+                            RemoveRoleFromInstanceProfileError::ServiceFailure(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "UnmodifiableEntity" => {
                         return RusotoError::Service(
-                            RemoveRoleFromInstanceProfileError::UnmodifiableEntity(String::from(
+                            RemoveRoleFromInstanceProfileError::UnmodifiableEntity(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -17885,17 +17591,17 @@ impl RemoveUserFromGroupError {
                 match &parsed_error.code[..] {
                     "LimitExceeded" => {
                         return RusotoError::Service(RemoveUserFromGroupError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(RemoveUserFromGroupError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(RemoveUserFromGroupError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -17946,9 +17652,7 @@ impl ResetServiceSpecificCredentialError {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
                         return RusotoError::Service(
-                            ResetServiceSpecificCredentialError::NoSuchEntity(String::from(
-                                parsed_error.message,
-                            )),
+                            ResetServiceSpecificCredentialError::NoSuchEntity(parsed_error.message),
                         )
                     }
                     _ => {}
@@ -18001,24 +17705,22 @@ impl ResyncMFADeviceError {
                 match &parsed_error.code[..] {
                     "InvalidAuthenticationCode" => {
                         return RusotoError::Service(
-                            ResyncMFADeviceError::InvalidAuthenticationCode(String::from(
-                                parsed_error.message,
-                            )),
+                            ResyncMFADeviceError::InvalidAuthenticationCode(parsed_error.message),
                         )
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(ResyncMFADeviceError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(ResyncMFADeviceError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(ResyncMFADeviceError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -18074,22 +17776,22 @@ impl SetDefaultPolicyVersionError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(SetDefaultPolicyVersionError::InvalidInput(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(SetDefaultPolicyVersionError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(SetDefaultPolicyVersionError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(SetDefaultPolicyVersionError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -18141,12 +17843,12 @@ impl SimulateCustomPolicyError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(SimulateCustomPolicyError::InvalidInput(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "PolicyEvaluation" => {
                         return RusotoError::Service(SimulateCustomPolicyError::PolicyEvaluation(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -18198,19 +17900,17 @@ impl SimulatePrincipalPolicyError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(SimulatePrincipalPolicyError::InvalidInput(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(SimulatePrincipalPolicyError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "PolicyEvaluation" => {
                         return RusotoError::Service(
-                            SimulatePrincipalPolicyError::PolicyEvaluation(String::from(
-                                parsed_error.message,
-                            )),
+                            SimulatePrincipalPolicyError::PolicyEvaluation(parsed_error.message),
                         )
                     }
                     _ => {}
@@ -18267,28 +17967,28 @@ impl TagRoleError {
                 match &parsed_error.code[..] {
                     "ConcurrentModification" => {
                         return RusotoError::Service(TagRoleError::ConcurrentModification(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "InvalidInput" => {
-                        return RusotoError::Service(TagRoleError::InvalidInput(String::from(
+                        return RusotoError::Service(TagRoleError::InvalidInput(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "LimitExceeded" => {
-                        return RusotoError::Service(TagRoleError::LimitExceeded(String::from(
+                        return RusotoError::Service(TagRoleError::LimitExceeded(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "NoSuchEntity" => {
-                        return RusotoError::Service(TagRoleError::NoSuchEntity(String::from(
+                        return RusotoError::Service(TagRoleError::NoSuchEntity(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "ServiceFailure" => {
-                        return RusotoError::Service(TagRoleError::ServiceFailure(String::from(
+                        return RusotoError::Service(TagRoleError::ServiceFailure(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     _ => {}
                 }
@@ -18346,28 +18046,28 @@ impl TagUserError {
                 match &parsed_error.code[..] {
                     "ConcurrentModification" => {
                         return RusotoError::Service(TagUserError::ConcurrentModification(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "InvalidInput" => {
-                        return RusotoError::Service(TagUserError::InvalidInput(String::from(
+                        return RusotoError::Service(TagUserError::InvalidInput(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "LimitExceeded" => {
-                        return RusotoError::Service(TagUserError::LimitExceeded(String::from(
+                        return RusotoError::Service(TagUserError::LimitExceeded(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "NoSuchEntity" => {
-                        return RusotoError::Service(TagUserError::NoSuchEntity(String::from(
+                        return RusotoError::Service(TagUserError::NoSuchEntity(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "ServiceFailure" => {
-                        return RusotoError::Service(TagUserError::ServiceFailure(String::from(
+                        return RusotoError::Service(TagUserError::ServiceFailure(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     _ => {}
                 }
@@ -18421,18 +18121,18 @@ impl UntagRoleError {
                 match &parsed_error.code[..] {
                     "ConcurrentModification" => {
                         return RusotoError::Service(UntagRoleError::ConcurrentModification(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
-                        return RusotoError::Service(UntagRoleError::NoSuchEntity(String::from(
+                        return RusotoError::Service(UntagRoleError::NoSuchEntity(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "ServiceFailure" => {
-                        return RusotoError::Service(UntagRoleError::ServiceFailure(String::from(
+                        return RusotoError::Service(UntagRoleError::ServiceFailure(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     _ => {}
                 }
@@ -18484,18 +18184,18 @@ impl UntagUserError {
                 match &parsed_error.code[..] {
                     "ConcurrentModification" => {
                         return RusotoError::Service(UntagUserError::ConcurrentModification(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
-                        return RusotoError::Service(UntagUserError::NoSuchEntity(String::from(
+                        return RusotoError::Service(UntagUserError::NoSuchEntity(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "ServiceFailure" => {
-                        return RusotoError::Service(UntagUserError::ServiceFailure(String::from(
+                        return RusotoError::Service(UntagUserError::ServiceFailure(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     _ => {}
                 }
@@ -18547,17 +18247,17 @@ impl UpdateAccessKeyError {
                 match &parsed_error.code[..] {
                     "LimitExceeded" => {
                         return RusotoError::Service(UpdateAccessKeyError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(UpdateAccessKeyError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(UpdateAccessKeyError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -18614,30 +18314,24 @@ impl UpdateAccountPasswordPolicyError {
                 match &parsed_error.code[..] {
                     "LimitExceeded" => {
                         return RusotoError::Service(
-                            UpdateAccountPasswordPolicyError::LimitExceeded(String::from(
-                                parsed_error.message,
-                            )),
+                            UpdateAccountPasswordPolicyError::LimitExceeded(parsed_error.message),
                         )
                     }
                     "MalformedPolicyDocument" => {
                         return RusotoError::Service(
                             UpdateAccountPasswordPolicyError::MalformedPolicyDocument(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(
-                            UpdateAccountPasswordPolicyError::NoSuchEntity(String::from(
-                                parsed_error.message,
-                            )),
+                            UpdateAccountPasswordPolicyError::NoSuchEntity(parsed_error.message),
                         )
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(
-                            UpdateAccountPasswordPolicyError::ServiceFailure(String::from(
-                                parsed_error.message,
-                            )),
+                            UpdateAccountPasswordPolicyError::ServiceFailure(parsed_error.message),
                         )
                     }
                     _ => {}
@@ -18695,31 +18389,29 @@ impl UpdateAssumeRolePolicyError {
                 match &parsed_error.code[..] {
                     "LimitExceeded" => {
                         return RusotoError::Service(UpdateAssumeRolePolicyError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "MalformedPolicyDocument" => {
                         return RusotoError::Service(
-                            UpdateAssumeRolePolicyError::MalformedPolicyDocument(String::from(
+                            UpdateAssumeRolePolicyError::MalformedPolicyDocument(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(UpdateAssumeRolePolicyError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(UpdateAssumeRolePolicyError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "UnmodifiableEntity" => {
                         return RusotoError::Service(
-                            UpdateAssumeRolePolicyError::UnmodifiableEntity(String::from(
-                                parsed_error.message,
-                            )),
+                            UpdateAssumeRolePolicyError::UnmodifiableEntity(parsed_error.message),
                         )
                     }
                     _ => {}
@@ -18776,22 +18468,22 @@ impl UpdateGroupError {
                 match &parsed_error.code[..] {
                     "EntityAlreadyExists" => {
                         return RusotoError::Service(UpdateGroupError::EntityAlreadyExists(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "LimitExceeded" => {
-                        return RusotoError::Service(UpdateGroupError::LimitExceeded(String::from(
+                        return RusotoError::Service(UpdateGroupError::LimitExceeded(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "NoSuchEntity" => {
-                        return RusotoError::Service(UpdateGroupError::NoSuchEntity(String::from(
+                        return RusotoError::Service(UpdateGroupError::NoSuchEntity(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(UpdateGroupError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -18849,31 +18541,29 @@ impl UpdateLoginProfileError {
                 match &parsed_error.code[..] {
                     "EntityTemporarilyUnmodifiable" => {
                         return RusotoError::Service(
-                            UpdateLoginProfileError::EntityTemporarilyUnmodifiable(String::from(
+                            UpdateLoginProfileError::EntityTemporarilyUnmodifiable(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(UpdateLoginProfileError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(UpdateLoginProfileError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "PasswordPolicyViolation" => {
                         return RusotoError::Service(
-                            UpdateLoginProfileError::PasswordPolicyViolation(String::from(
-                                parsed_error.message,
-                            )),
+                            UpdateLoginProfileError::PasswordPolicyViolation(parsed_error.message),
                         )
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(UpdateLoginProfileError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -18930,22 +18620,22 @@ impl UpdateOpenIDConnectProviderThumbprintError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(
-                            UpdateOpenIDConnectProviderThumbprintError::InvalidInput(String::from(
+                            UpdateOpenIDConnectProviderThumbprintError::InvalidInput(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(
-                            UpdateOpenIDConnectProviderThumbprintError::NoSuchEntity(String::from(
+                            UpdateOpenIDConnectProviderThumbprintError::NoSuchEntity(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(
                             UpdateOpenIDConnectProviderThumbprintError::ServiceFailure(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
@@ -18998,18 +18688,18 @@ impl UpdateRoleError {
             if let Ok(parsed_error) = Self::deserialize(&mut stack) {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
-                        return RusotoError::Service(UpdateRoleError::NoSuchEntity(String::from(
+                        return RusotoError::Service(UpdateRoleError::NoSuchEntity(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "ServiceFailure" => {
-                        return RusotoError::Service(UpdateRoleError::ServiceFailure(String::from(
+                        return RusotoError::Service(UpdateRoleError::ServiceFailure(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "UnmodifiableEntity" => {
                         return RusotoError::Service(UpdateRoleError::UnmodifiableEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -19062,19 +18752,17 @@ impl UpdateRoleDescriptionError {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
                         return RusotoError::Service(UpdateRoleDescriptionError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(UpdateRoleDescriptionError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "UnmodifiableEntity" => {
                         return RusotoError::Service(
-                            UpdateRoleDescriptionError::UnmodifiableEntity(String::from(
-                                parsed_error.message,
-                            )),
+                            UpdateRoleDescriptionError::UnmodifiableEntity(parsed_error.message),
                         )
                     }
                     _ => {}
@@ -19129,22 +18817,22 @@ impl UpdateSAMLProviderError {
                 match &parsed_error.code[..] {
                     "InvalidInput" => {
                         return RusotoError::Service(UpdateSAMLProviderError::InvalidInput(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(UpdateSAMLProviderError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(UpdateSAMLProviderError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(UpdateSAMLProviderError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -19194,7 +18882,7 @@ impl UpdateSSHPublicKeyError {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
                         return RusotoError::Service(UpdateSSHPublicKeyError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -19247,24 +18935,22 @@ impl UpdateServerCertificateError {
                 match &parsed_error.code[..] {
                     "EntityAlreadyExists" => {
                         return RusotoError::Service(
-                            UpdateServerCertificateError::EntityAlreadyExists(String::from(
-                                parsed_error.message,
-                            )),
+                            UpdateServerCertificateError::EntityAlreadyExists(parsed_error.message),
                         )
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(UpdateServerCertificateError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(UpdateServerCertificateError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(UpdateServerCertificateError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -19316,9 +19002,9 @@ impl UpdateServiceSpecificCredentialError {
                 match &parsed_error.code[..] {
                     "NoSuchEntity" => {
                         return RusotoError::Service(
-                            UpdateServiceSpecificCredentialError::NoSuchEntity(String::from(
+                            UpdateServiceSpecificCredentialError::NoSuchEntity(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -19369,17 +19055,17 @@ impl UpdateSigningCertificateError {
                 match &parsed_error.code[..] {
                     "LimitExceeded" => {
                         return RusotoError::Service(UpdateSigningCertificateError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(UpdateSigningCertificateError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(UpdateSigningCertificateError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -19438,35 +19124,33 @@ impl UpdateUserError {
                 match &parsed_error.code[..] {
                     "ConcurrentModification" => {
                         return RusotoError::Service(UpdateUserError::ConcurrentModification(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "EntityAlreadyExists" => {
                         return RusotoError::Service(UpdateUserError::EntityAlreadyExists(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "EntityTemporarilyUnmodifiable" => {
                         return RusotoError::Service(
-                            UpdateUserError::EntityTemporarilyUnmodifiable(String::from(
-                                parsed_error.message,
-                            )),
+                            UpdateUserError::EntityTemporarilyUnmodifiable(parsed_error.message),
                         )
                     }
                     "LimitExceeded" => {
-                        return RusotoError::Service(UpdateUserError::LimitExceeded(String::from(
+                        return RusotoError::Service(UpdateUserError::LimitExceeded(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "NoSuchEntity" => {
-                        return RusotoError::Service(UpdateUserError::NoSuchEntity(String::from(
+                        return RusotoError::Service(UpdateUserError::NoSuchEntity(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     "ServiceFailure" => {
-                        return RusotoError::Service(UpdateUserError::ServiceFailure(String::from(
+                        return RusotoError::Service(UpdateUserError::ServiceFailure(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     _ => {}
                 }
@@ -19525,31 +19209,29 @@ impl UploadSSHPublicKeyError {
                 match &parsed_error.code[..] {
                     "DuplicateSSHPublicKey" => {
                         return RusotoError::Service(
-                            UploadSSHPublicKeyError::DuplicateSSHPublicKey(String::from(
-                                parsed_error.message,
-                            )),
+                            UploadSSHPublicKeyError::DuplicateSSHPublicKey(parsed_error.message),
                         )
                     }
                     "InvalidPublicKey" => {
                         return RusotoError::Service(UploadSSHPublicKeyError::InvalidPublicKey(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(UploadSSHPublicKeyError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(UploadSSHPublicKeyError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "UnrecognizedPublicKeyEncoding" => {
                         return RusotoError::Service(
-                            UploadSSHPublicKeyError::UnrecognizedPublicKeyEncoding(String::from(
+                            UploadSSHPublicKeyError::UnrecognizedPublicKeyEncoding(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -19608,31 +19290,29 @@ impl UploadServerCertificateError {
                 match &parsed_error.code[..] {
                     "EntityAlreadyExists" => {
                         return RusotoError::Service(
-                            UploadServerCertificateError::EntityAlreadyExists(String::from(
-                                parsed_error.message,
-                            )),
+                            UploadServerCertificateError::EntityAlreadyExists(parsed_error.message),
                         )
                     }
                     "KeyPairMismatch" => {
                         return RusotoError::Service(UploadServerCertificateError::KeyPairMismatch(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(UploadServerCertificateError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "MalformedCertificate" => {
                         return RusotoError::Service(
-                            UploadServerCertificateError::MalformedCertificate(String::from(
+                            UploadServerCertificateError::MalformedCertificate(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(UploadServerCertificateError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -19695,45 +19375,43 @@ impl UploadSigningCertificateError {
                 match &parsed_error.code[..] {
                     "DuplicateCertificate" => {
                         return RusotoError::Service(
-                            UploadSigningCertificateError::DuplicateCertificate(String::from(
+                            UploadSigningCertificateError::DuplicateCertificate(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "EntityAlreadyExists" => {
                         return RusotoError::Service(
-                            UploadSigningCertificateError::EntityAlreadyExists(String::from(
+                            UploadSigningCertificateError::EntityAlreadyExists(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "InvalidCertificate" => {
                         return RusotoError::Service(
-                            UploadSigningCertificateError::InvalidCertificate(String::from(
-                                parsed_error.message,
-                            )),
+                            UploadSigningCertificateError::InvalidCertificate(parsed_error.message),
                         )
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(UploadSigningCertificateError::LimitExceeded(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "MalformedCertificate" => {
                         return RusotoError::Service(
-                            UploadSigningCertificateError::MalformedCertificate(String::from(
+                            UploadSigningCertificateError::MalformedCertificate(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "NoSuchEntity" => {
                         return RusotoError::Service(UploadSigningCertificateError::NoSuchEntity(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceFailure" => {
                         return RusotoError::Service(UploadSigningCertificateError::ServiceFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -20567,7 +20245,7 @@ impl IamClient {
     pub fn new(region: region::Region) -> IamClient {
         IamClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -20584,7 +20262,7 @@ impl IamClient {
     {
         IamClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }

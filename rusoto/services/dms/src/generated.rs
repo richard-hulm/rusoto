@@ -4759,7 +4759,7 @@ impl DatabaseMigrationServiceClient {
     pub fn new(region: region::Region) -> DatabaseMigrationServiceClient {
         DatabaseMigrationServiceClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -4776,7 +4776,7 @@ impl DatabaseMigrationServiceClient {
     {
         DatabaseMigrationServiceClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }

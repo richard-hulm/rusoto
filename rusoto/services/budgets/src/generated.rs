@@ -1433,7 +1433,7 @@ impl BudgetsClient {
     pub fn new(region: region::Region) -> BudgetsClient {
         BudgetsClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -1450,7 +1450,7 @@ impl BudgetsClient {
     {
         BudgetsClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }

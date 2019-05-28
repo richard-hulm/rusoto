@@ -37,10 +37,7 @@ use xml::EventReader;
 struct AccessKeyIdTypeDeserializer;
 impl AccessKeyIdTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -51,10 +48,7 @@ impl AccessKeyIdTypeDeserializer {
 struct AccessKeySecretTypeDeserializer;
 impl AccessKeySecretTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -65,10 +59,7 @@ impl AccessKeySecretTypeDeserializer {
 struct AccountTypeDeserializer;
 impl AccountTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -79,10 +70,7 @@ impl AccountTypeDeserializer {
 struct ArnTypeDeserializer;
 impl ArnTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -154,7 +142,7 @@ pub struct AssumeRoleResponse {
 struct AssumeRoleResponseDeserializer;
 impl AssumeRoleResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<AssumeRoleResponse, XmlParseError> {
@@ -244,7 +232,7 @@ pub struct AssumeRoleWithSAMLResponse {
 struct AssumeRoleWithSAMLResponseDeserializer;
 impl AssumeRoleWithSAMLResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<AssumeRoleWithSAMLResponse, XmlParseError> {
@@ -362,7 +350,7 @@ pub struct AssumeRoleWithWebIdentityResponse {
 struct AssumeRoleWithWebIdentityResponseDeserializer;
 impl AssumeRoleWithWebIdentityResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<AssumeRoleWithWebIdentityResponse, XmlParseError> {
@@ -411,10 +399,7 @@ impl AssumeRoleWithWebIdentityResponseDeserializer {
 struct AssumedRoleIdTypeDeserializer;
 impl AssumedRoleIdTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -434,7 +419,7 @@ pub struct AssumedRoleUser {
 struct AssumedRoleUserDeserializer;
 impl AssumedRoleUserDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<AssumedRoleUser, XmlParseError> {
@@ -456,10 +441,7 @@ impl AssumedRoleUserDeserializer {
 struct AudienceDeserializer;
 impl AudienceDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -483,7 +465,7 @@ pub struct Credentials {
 struct CredentialsDeserializer;
 impl CredentialsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Credentials, XmlParseError> {
@@ -512,10 +494,7 @@ impl CredentialsDeserializer {
 struct DateTypeDeserializer;
 impl DateTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -555,7 +534,7 @@ pub struct DecodeAuthorizationMessageResponse {
 struct DecodeAuthorizationMessageResponseDeserializer;
 impl DecodeAuthorizationMessageResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<DecodeAuthorizationMessageResponse, XmlParseError> {
@@ -580,10 +559,7 @@ impl DecodeAuthorizationMessageResponseDeserializer {
 struct DecodedMessageTypeDeserializer;
 impl DecodedMessageTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -594,10 +570,7 @@ impl DecodedMessageTypeDeserializer {
 struct FederatedIdTypeDeserializer;
 impl FederatedIdTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -617,7 +590,7 @@ pub struct FederatedUser {
 struct FederatedUserDeserializer;
 impl FederatedUserDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<FederatedUser, XmlParseError> {
@@ -664,7 +637,7 @@ pub struct GetCallerIdentityResponse {
 struct GetCallerIdentityResponseDeserializer;
 impl GetCallerIdentityResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetCallerIdentityResponse, XmlParseError> {
@@ -732,7 +705,7 @@ pub struct GetFederationTokenResponse {
 struct GetFederationTokenResponseDeserializer;
 impl GetFederationTokenResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetFederationTokenResponse, XmlParseError> {
@@ -806,7 +779,7 @@ pub struct GetSessionTokenResponse {
 struct GetSessionTokenResponseDeserializer;
 impl GetSessionTokenResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetSessionTokenResponse, XmlParseError> {
@@ -829,10 +802,7 @@ impl GetSessionTokenResponseDeserializer {
 struct IssuerDeserializer;
 impl IssuerDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -843,10 +813,7 @@ impl IssuerDeserializer {
 struct NameQualifierDeserializer;
 impl NameQualifierDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -857,10 +824,7 @@ impl NameQualifierDeserializer {
 struct NonNegativeIntegerTypeDeserializer;
 impl NonNegativeIntegerTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -871,10 +835,7 @@ impl NonNegativeIntegerTypeDeserializer {
 struct SubjectDeserializer;
 impl SubjectDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -885,10 +846,7 @@ impl SubjectDeserializer {
 struct SubjectTypeDeserializer;
 impl SubjectTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -899,10 +857,7 @@ impl SubjectTypeDeserializer {
 struct TokenTypeDeserializer;
 impl TokenTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -913,10 +868,7 @@ impl TokenTypeDeserializer {
 struct UserIdTypeDeserializer;
 impl UserIdTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -927,10 +879,7 @@ impl UserIdTypeDeserializer {
 struct WebIdentitySubjectTypeDeserializer;
 impl WebIdentitySubjectTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -959,18 +908,18 @@ impl AssumeRoleError {
                 match &parsed_error.code[..] {
                     "MalformedPolicyDocument" => {
                         return RusotoError::Service(AssumeRoleError::MalformedPolicyDocument(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "PackedPolicyTooLarge" => {
                         return RusotoError::Service(AssumeRoleError::PackedPolicyTooLarge(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "RegionDisabledException" => {
-                        return RusotoError::Service(AssumeRoleError::RegionDisabled(String::from(
+                        return RusotoError::Service(AssumeRoleError::RegionDisabled(
                             parsed_error.message,
-                        )))
+                        ))
                     }
                     _ => {}
                 }
@@ -1028,34 +977,32 @@ impl AssumeRoleWithSAMLError {
                 match &parsed_error.code[..] {
                     "ExpiredTokenException" => {
                         return RusotoError::Service(AssumeRoleWithSAMLError::ExpiredToken(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "IDPRejectedClaim" => {
                         return RusotoError::Service(AssumeRoleWithSAMLError::IDPRejectedClaim(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "InvalidIdentityToken" => {
                         return RusotoError::Service(AssumeRoleWithSAMLError::InvalidIdentityToken(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "MalformedPolicyDocument" => {
                         return RusotoError::Service(
-                            AssumeRoleWithSAMLError::MalformedPolicyDocument(String::from(
-                                parsed_error.message,
-                            )),
+                            AssumeRoleWithSAMLError::MalformedPolicyDocument(parsed_error.message),
                         )
                     }
                     "PackedPolicyTooLarge" => {
                         return RusotoError::Service(AssumeRoleWithSAMLError::PackedPolicyTooLarge(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "RegionDisabledException" => {
                         return RusotoError::Service(AssumeRoleWithSAMLError::RegionDisabled(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -1119,49 +1066,45 @@ impl AssumeRoleWithWebIdentityError {
                 match &parsed_error.code[..] {
                     "ExpiredTokenException" => {
                         return RusotoError::Service(AssumeRoleWithWebIdentityError::ExpiredToken(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "IDPCommunicationError" => {
                         return RusotoError::Service(
-                            AssumeRoleWithWebIdentityError::IDPCommunicationError(String::from(
+                            AssumeRoleWithWebIdentityError::IDPCommunicationError(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "IDPRejectedClaim" => {
                         return RusotoError::Service(
-                            AssumeRoleWithWebIdentityError::IDPRejectedClaim(String::from(
-                                parsed_error.message,
-                            )),
+                            AssumeRoleWithWebIdentityError::IDPRejectedClaim(parsed_error.message),
                         )
                     }
                     "InvalidIdentityToken" => {
                         return RusotoError::Service(
-                            AssumeRoleWithWebIdentityError::InvalidIdentityToken(String::from(
+                            AssumeRoleWithWebIdentityError::InvalidIdentityToken(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "MalformedPolicyDocument" => {
                         return RusotoError::Service(
-                            AssumeRoleWithWebIdentityError::MalformedPolicyDocument(String::from(
+                            AssumeRoleWithWebIdentityError::MalformedPolicyDocument(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "PackedPolicyTooLarge" => {
                         return RusotoError::Service(
-                            AssumeRoleWithWebIdentityError::PackedPolicyTooLarge(String::from(
+                            AssumeRoleWithWebIdentityError::PackedPolicyTooLarge(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "RegionDisabledException" => {
                         return RusotoError::Service(
-                            AssumeRoleWithWebIdentityError::RegionDisabled(String::from(
-                                parsed_error.message,
-                            )),
+                            AssumeRoleWithWebIdentityError::RegionDisabled(parsed_error.message),
                         )
                     }
                     _ => {}
@@ -1217,7 +1160,7 @@ impl DecodeAuthorizationMessageError {
                     "InvalidAuthorizationMessageException" => {
                         return RusotoError::Service(
                             DecodeAuthorizationMessageError::InvalidAuthorizationMessage(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
@@ -1306,19 +1249,17 @@ impl GetFederationTokenError {
                 match &parsed_error.code[..] {
                     "MalformedPolicyDocument" => {
                         return RusotoError::Service(
-                            GetFederationTokenError::MalformedPolicyDocument(String::from(
-                                parsed_error.message,
-                            )),
+                            GetFederationTokenError::MalformedPolicyDocument(parsed_error.message),
                         )
                     }
                     "PackedPolicyTooLarge" => {
                         return RusotoError::Service(GetFederationTokenError::PackedPolicyTooLarge(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "RegionDisabledException" => {
                         return RusotoError::Service(GetFederationTokenError::RegionDisabled(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -1367,7 +1308,7 @@ impl GetSessionTokenError {
                 match &parsed_error.code[..] {
                     "RegionDisabledException" => {
                         return RusotoError::Service(GetSessionTokenError::RegionDisabled(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -1455,7 +1396,7 @@ impl StsClient {
     pub fn new(region: region::Region) -> StsClient {
         StsClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -1472,7 +1413,7 @@ impl StsClient {
     {
         StsClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }

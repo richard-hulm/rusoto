@@ -1141,7 +1141,7 @@ impl FmsClient {
     pub fn new(region: region::Region) -> FmsClient {
         FmsClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -1158,7 +1158,7 @@ impl FmsClient {
     {
         FmsClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }

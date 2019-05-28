@@ -787,7 +787,7 @@ impl KafkaClient {
     pub fn new(region: region::Region) -> KafkaClient {
         KafkaClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -804,7 +804,7 @@ impl KafkaClient {
     {
         KafkaClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }

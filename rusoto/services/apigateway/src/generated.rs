@@ -10538,7 +10538,7 @@ impl ApiGatewayClient {
     pub fn new(region: region::Region) -> ApiGatewayClient {
         ApiGatewayClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -10555,7 +10555,7 @@ impl ApiGatewayClient {
     {
         ApiGatewayClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }

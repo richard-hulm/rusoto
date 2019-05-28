@@ -7233,7 +7233,7 @@ impl SageMakerClient {
     pub fn new(region: region::Region) -> SageMakerClient {
         SageMakerClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -7250,7 +7250,7 @@ impl SageMakerClient {
     {
         SageMakerClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }

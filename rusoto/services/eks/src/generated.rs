@@ -791,7 +791,7 @@ impl EksClient {
     pub fn new(region: region::Region) -> EksClient {
         EksClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -808,7 +808,7 @@ impl EksClient {
     {
         EksClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }

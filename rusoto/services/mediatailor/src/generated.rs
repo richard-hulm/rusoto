@@ -626,7 +626,7 @@ impl MediaTailorClient {
     pub fn new(region: region::Region) -> MediaTailorClient {
         MediaTailorClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -643,7 +643,7 @@ impl MediaTailorClient {
     {
         MediaTailorClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }

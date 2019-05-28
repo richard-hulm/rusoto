@@ -37,10 +37,7 @@ use xml::EventReader;
 struct ActionsEnabledDeserializer;
 impl ActionsEnabledDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<bool, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<bool, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = bool::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -51,10 +48,7 @@ impl ActionsEnabledDeserializer {
 struct AlarmArnDeserializer;
 impl AlarmArnDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -65,10 +59,7 @@ impl AlarmArnDeserializer {
 struct AlarmDescriptionDeserializer;
 impl AlarmDescriptionDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -94,7 +85,7 @@ pub struct AlarmHistoryItem {
 struct AlarmHistoryItemDeserializer;
 impl AlarmHistoryItemDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<AlarmHistoryItem, XmlParseError> {
@@ -131,7 +122,7 @@ impl AlarmHistoryItemDeserializer {
 struct AlarmHistoryItemsDeserializer;
 impl AlarmHistoryItemsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<AlarmHistoryItem>, XmlParseError> {
@@ -148,10 +139,7 @@ impl AlarmHistoryItemsDeserializer {
 struct AlarmNameDeserializer;
 impl AlarmNameDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -174,10 +162,7 @@ impl AlarmNamesSerializer {
 struct ComparisonOperatorDeserializer;
 impl ComparisonOperatorDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -200,10 +185,7 @@ impl CountsSerializer {
 struct DashboardArnDeserializer;
 impl DashboardArnDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -214,10 +196,7 @@ impl DashboardArnDeserializer {
 struct DashboardBodyDeserializer;
 impl DashboardBodyDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -228,7 +207,7 @@ impl DashboardBodyDeserializer {
 struct DashboardEntriesDeserializer;
 impl DashboardEntriesDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<DashboardEntry>, XmlParseError> {
@@ -258,7 +237,7 @@ pub struct DashboardEntry {
 struct DashboardEntryDeserializer;
 impl DashboardEntryDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<DashboardEntry, XmlParseError> {
@@ -294,10 +273,7 @@ impl DashboardEntryDeserializer {
 struct DashboardNameDeserializer;
 impl DashboardNameDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -329,7 +305,7 @@ pub struct DashboardValidationMessage {
 struct DashboardValidationMessageDeserializer;
 impl DashboardValidationMessageDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<DashboardValidationMessage, XmlParseError> {
@@ -354,7 +330,7 @@ impl DashboardValidationMessageDeserializer {
 struct DashboardValidationMessagesDeserializer;
 impl DashboardValidationMessagesDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<DashboardValidationMessage>, XmlParseError> {
@@ -373,10 +349,7 @@ impl DashboardValidationMessagesDeserializer {
 struct DataPathDeserializer;
 impl DataPathDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -408,7 +381,7 @@ pub struct Datapoint {
 struct DatapointDeserializer;
 impl DatapointDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Datapoint, XmlParseError> {
@@ -453,10 +426,7 @@ impl DatapointDeserializer {
 struct DatapointValueDeserializer;
 impl DatapointValueDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<f64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<f64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = f64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -467,7 +437,7 @@ impl DatapointValueDeserializer {
 struct DatapointValueMapDeserializer;
 impl DatapointValueMapDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<::std::collections::HashMap<String, f64>, XmlParseError> {
@@ -490,7 +460,7 @@ impl DatapointValueMapDeserializer {
 struct DatapointValuesDeserializer;
 impl DatapointValuesDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<f64>, XmlParseError> {
@@ -507,7 +477,7 @@ impl DatapointValuesDeserializer {
 struct DatapointsDeserializer;
 impl DatapointsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<Datapoint>, XmlParseError> {
@@ -524,10 +494,7 @@ impl DatapointsDeserializer {
 struct DatapointsToAlarmDeserializer;
 impl DatapointsToAlarmDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -587,7 +554,7 @@ pub struct DeleteDashboardsOutput {}
 struct DeleteDashboardsOutputDeserializer;
 impl DeleteDashboardsOutputDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<DeleteDashboardsOutput, XmlParseError> {
@@ -657,7 +624,7 @@ pub struct DescribeAlarmHistoryOutput {
 struct DescribeAlarmHistoryOutputDeserializer;
 impl DescribeAlarmHistoryOutputDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<DescribeAlarmHistoryOutput, XmlParseError> {
@@ -742,7 +709,7 @@ pub struct DescribeAlarmsForMetricOutput {
 struct DescribeAlarmsForMetricOutputDeserializer;
 impl DescribeAlarmsForMetricOutputDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<DescribeAlarmsForMetricOutput, XmlParseError> {
@@ -824,7 +791,7 @@ pub struct DescribeAlarmsOutput {
 struct DescribeAlarmsOutputDeserializer;
 impl DescribeAlarmsOutputDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<DescribeAlarmsOutput, XmlParseError> {
@@ -856,7 +823,7 @@ pub struct Dimension {
 struct DimensionDeserializer;
 impl DimensionDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Dimension, XmlParseError> {
@@ -928,10 +895,7 @@ impl DimensionFiltersSerializer {
 struct DimensionNameDeserializer;
 impl DimensionNameDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -942,10 +906,7 @@ impl DimensionNameDeserializer {
 struct DimensionValueDeserializer;
 impl DimensionValueDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -956,7 +917,7 @@ impl DimensionValueDeserializer {
 struct DimensionsDeserializer;
 impl DimensionsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<Dimension>, XmlParseError> {
@@ -1031,10 +992,7 @@ impl EnableAlarmActionsInputSerializer {
 struct EvaluateLowSampleCountPercentileDeserializer;
 impl EvaluateLowSampleCountPercentileDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -1045,10 +1003,7 @@ impl EvaluateLowSampleCountPercentileDeserializer {
 struct EvaluationPeriodsDeserializer;
 impl EvaluationPeriodsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -1059,10 +1014,7 @@ impl EvaluationPeriodsDeserializer {
 struct ExtendedStatisticDeserializer;
 impl ExtendedStatisticDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -1117,7 +1069,7 @@ pub struct GetDashboardOutput {
 struct GetDashboardOutputDeserializer;
 impl GetDashboardOutputDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetDashboardOutput, XmlParseError> {
@@ -1202,7 +1154,7 @@ pub struct GetMetricDataOutput {
 struct GetMetricDataOutputDeserializer;
 impl GetMetricDataOutputDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetMetricDataOutput, XmlParseError> {
@@ -1296,7 +1248,7 @@ pub struct GetMetricStatisticsOutput {
 struct GetMetricStatisticsOutputDeserializer;
 impl GetMetricStatisticsOutputDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetMetricStatisticsOutput, XmlParseError> {
@@ -1353,7 +1305,7 @@ pub struct GetMetricWidgetImageOutput {
 struct GetMetricWidgetImageOutputDeserializer;
 impl GetMetricWidgetImageOutputDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<GetMetricWidgetImageOutput, XmlParseError> {
@@ -1378,10 +1330,7 @@ impl GetMetricWidgetImageOutputDeserializer {
 struct HistoryDataDeserializer;
 impl HistoryDataDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -1392,10 +1341,7 @@ impl HistoryDataDeserializer {
 struct HistoryItemTypeDeserializer;
 impl HistoryItemTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -1406,10 +1352,7 @@ impl HistoryItemTypeDeserializer {
 struct HistorySummaryDeserializer;
 impl HistorySummaryDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -1420,10 +1363,7 @@ impl HistorySummaryDeserializer {
 struct LastModifiedDeserializer;
 impl LastModifiedDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -1471,7 +1411,7 @@ pub struct ListDashboardsOutput {
 struct ListDashboardsOutputDeserializer;
 impl ListDashboardsOutputDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListDashboardsOutput, XmlParseError> {
@@ -1542,7 +1482,7 @@ pub struct ListMetricsOutput {
 struct ListMetricsOutputDeserializer;
 impl ListMetricsOutputDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ListMetricsOutput, XmlParseError> {
@@ -1565,10 +1505,7 @@ impl ListMetricsOutputDeserializer {
 struct MessageDeserializer;
 impl MessageDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -1588,7 +1525,7 @@ pub struct MessageData {
 struct MessageDataDeserializer;
 impl MessageDataDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<MessageData, XmlParseError> {
@@ -1609,10 +1546,7 @@ impl MessageDataDeserializer {
 struct MessageDataCodeDeserializer;
 impl MessageDataCodeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -1623,10 +1557,7 @@ impl MessageDataCodeDeserializer {
 struct MessageDataValueDeserializer;
 impl MessageDataValueDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -1648,10 +1579,7 @@ pub struct Metric {
 struct MetricDeserializer;
 impl MetricDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<Metric, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<Metric, XmlParseError> {
         deserialize_elements::<_, Metric, _>(tag_name, stack, |name, stack, obj| {
             match name {
                 "Dimensions" => {
@@ -1758,7 +1686,7 @@ pub struct MetricAlarm {
 struct MetricAlarmDeserializer;
 impl MetricAlarmDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<MetricAlarm, XmlParseError> {
@@ -1899,7 +1827,7 @@ impl MetricAlarmDeserializer {
 struct MetricAlarmsDeserializer;
 impl MetricAlarmsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<MetricAlarm>, XmlParseError> {
@@ -1928,7 +1856,7 @@ impl MetricDataSerializer {
 struct MetricDataQueriesDeserializer;
 impl MetricDataQueriesDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<MetricDataQuery>, XmlParseError> {
@@ -1972,7 +1900,7 @@ pub struct MetricDataQuery {
 struct MetricDataQueryDeserializer;
 impl MetricDataQueryDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<MetricDataQuery, XmlParseError> {
@@ -2054,7 +1982,7 @@ pub struct MetricDataResult {
 struct MetricDataResultDeserializer;
 impl MetricDataResultDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<MetricDataResult, XmlParseError> {
@@ -2094,7 +2022,7 @@ impl MetricDataResultDeserializer {
 struct MetricDataResultMessagesDeserializer;
 impl MetricDataResultMessagesDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<MessageData>, XmlParseError> {
@@ -2111,7 +2039,7 @@ impl MetricDataResultMessagesDeserializer {
 struct MetricDataResultsDeserializer;
 impl MetricDataResultsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<MetricDataResult>, XmlParseError> {
@@ -2196,10 +2124,7 @@ impl MetricDatumSerializer {
 struct MetricExpressionDeserializer;
 impl MetricExpressionDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -2210,10 +2135,7 @@ impl MetricExpressionDeserializer {
 struct MetricIdDeserializer;
 impl MetricIdDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -2224,10 +2146,7 @@ impl MetricIdDeserializer {
 struct MetricLabelDeserializer;
 impl MetricLabelDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -2238,10 +2157,7 @@ impl MetricLabelDeserializer {
 struct MetricNameDeserializer;
 impl MetricNameDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -2265,7 +2181,7 @@ pub struct MetricStat {
 struct MetricStatDeserializer;
 impl MetricStatDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<MetricStat, XmlParseError> {
@@ -2311,7 +2227,7 @@ impl MetricStatSerializer {
 struct MetricWidgetImageDeserializer;
 impl MetricWidgetImageDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<bytes::Bytes, XmlParseError> {
@@ -2325,7 +2241,7 @@ impl MetricWidgetImageDeserializer {
 struct MetricsDeserializer;
 impl MetricsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<Metric>, XmlParseError> {
@@ -2342,10 +2258,7 @@ impl MetricsDeserializer {
 struct NamespaceDeserializer;
 impl NamespaceDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -2356,10 +2269,7 @@ impl NamespaceDeserializer {
 struct NextTokenDeserializer;
 impl NextTokenDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -2370,10 +2280,7 @@ impl NextTokenDeserializer {
 struct PeriodDeserializer;
 impl PeriodDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -2418,7 +2325,7 @@ pub struct PutDashboardOutput {
 struct PutDashboardOutputDeserializer;
 impl PutDashboardOutputDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<PutDashboardOutput, XmlParseError> {
@@ -2604,7 +2511,7 @@ impl PutMetricDataInputSerializer {
 struct ResourceListDeserializer;
 impl ResourceListDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<String>, XmlParseError> {
@@ -2633,10 +2540,7 @@ impl ResourceListSerializer {
 struct ResourceNameDeserializer;
 impl ResourceNameDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -2647,10 +2551,7 @@ impl ResourceNameDeserializer {
 struct ReturnDataDeserializer;
 impl ReturnDataDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<bool, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<bool, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = bool::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -2691,10 +2592,7 @@ impl SetAlarmStateInputSerializer {
 struct SizeDeserializer;
 impl SizeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -2705,10 +2603,7 @@ impl SizeDeserializer {
 struct StandardUnitDeserializer;
 impl StandardUnitDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -2719,10 +2614,7 @@ impl StandardUnitDeserializer {
 struct StatDeserializer;
 impl StatDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -2733,10 +2625,7 @@ impl StatDeserializer {
 struct StateReasonDeserializer;
 impl StateReasonDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -2747,10 +2636,7 @@ impl StateReasonDeserializer {
 struct StateReasonDataDeserializer;
 impl StateReasonDataDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -2761,10 +2647,7 @@ impl StateReasonDataDeserializer {
 struct StateValueDeserializer;
 impl StateValueDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -2775,10 +2658,7 @@ impl StateValueDeserializer {
 struct StatisticDeserializer;
 impl StatisticDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -2829,10 +2709,7 @@ impl StatisticsSerializer {
 struct StatusCodeDeserializer;
 impl StatusCodeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -2843,10 +2720,7 @@ impl StatusCodeDeserializer {
 struct ThresholdDeserializer;
 impl ThresholdDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<f64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<f64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = f64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -2857,10 +2731,7 @@ impl ThresholdDeserializer {
 struct TimestampDeserializer;
 impl TimestampDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -2871,7 +2742,7 @@ impl TimestampDeserializer {
 struct TimestampsDeserializer;
 impl TimestampsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<String>, XmlParseError> {
@@ -2888,10 +2759,7 @@ impl TimestampsDeserializer {
 struct TreatMissingDataDeserializer;
 impl TreatMissingDataDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -2928,7 +2796,7 @@ impl DeleteAlarmsError {
                 match &parsed_error.code[..] {
                     "ResourceNotFound" => {
                         return RusotoError::Service(DeleteAlarmsError::ResourceNotFound(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -2979,17 +2847,17 @@ impl DeleteDashboardsError {
                 match &parsed_error.code[..] {
                     "ResourceNotFound" => {
                         return RusotoError::Service(DeleteDashboardsError::DashboardNotFoundError(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "InternalServiceError" => {
                         return RusotoError::Service(DeleteDashboardsError::InternalServiceFault(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "InvalidParameterValue" => {
                         return RusotoError::Service(DeleteDashboardsError::InvalidParameterValue(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -3038,7 +2906,7 @@ impl DescribeAlarmHistoryError {
                 match &parsed_error.code[..] {
                     "InvalidNextToken" => {
                         return RusotoError::Service(DescribeAlarmHistoryError::InvalidNextToken(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -3085,7 +2953,7 @@ impl DescribeAlarmsError {
                 match &parsed_error.code[..] {
                     "InvalidNextToken" => {
                         return RusotoError::Service(DescribeAlarmsError::InvalidNextToken(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -3247,17 +3115,17 @@ impl GetDashboardError {
                 match &parsed_error.code[..] {
                     "ResourceNotFound" => {
                         return RusotoError::Service(GetDashboardError::DashboardNotFoundError(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "InternalServiceError" => {
                         return RusotoError::Service(GetDashboardError::InternalServiceFault(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "InvalidParameterValue" => {
                         return RusotoError::Service(GetDashboardError::InvalidParameterValue(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -3306,7 +3174,7 @@ impl GetMetricDataError {
                 match &parsed_error.code[..] {
                     "InvalidNextToken" => {
                         return RusotoError::Service(GetMetricDataError::InvalidNextToken(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -3359,30 +3227,26 @@ impl GetMetricStatisticsError {
                 match &parsed_error.code[..] {
                     "InternalServiceError" => {
                         return RusotoError::Service(
-                            GetMetricStatisticsError::InternalServiceFault(String::from(
-                                parsed_error.message,
-                            )),
+                            GetMetricStatisticsError::InternalServiceFault(parsed_error.message),
                         )
                     }
                     "InvalidParameterCombination" => {
                         return RusotoError::Service(
-                            GetMetricStatisticsError::InvalidParameterCombination(String::from(
+                            GetMetricStatisticsError::InvalidParameterCombination(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "InvalidParameterValue" => {
                         return RusotoError::Service(
-                            GetMetricStatisticsError::InvalidParameterValue(String::from(
-                                parsed_error.message,
-                            )),
+                            GetMetricStatisticsError::InvalidParameterValue(parsed_error.message),
                         )
                     }
                     "MissingParameter" => {
                         return RusotoError::Service(
-                            GetMetricStatisticsError::MissingRequiredParameter(String::from(
+                            GetMetricStatisticsError::MissingRequiredParameter(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -3471,12 +3335,12 @@ impl ListDashboardsError {
                 match &parsed_error.code[..] {
                     "InternalServiceError" => {
                         return RusotoError::Service(ListDashboardsError::InternalServiceFault(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "InvalidParameterValue" => {
                         return RusotoError::Service(ListDashboardsError::InvalidParameterValue(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -3526,12 +3390,12 @@ impl ListMetricsError {
                 match &parsed_error.code[..] {
                     "InternalServiceError" => {
                         return RusotoError::Service(ListMetricsError::InternalServiceFault(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "InvalidParameterValue" => {
                         return RusotoError::Service(ListMetricsError::InvalidParameterValue(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -3581,12 +3445,12 @@ impl PutDashboardError {
                 match &parsed_error.code[..] {
                     "InvalidParameterInput" => {
                         return RusotoError::Service(PutDashboardError::DashboardInvalidInputError(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "InternalServiceError" => {
                         return RusotoError::Service(PutDashboardError::InternalServiceFault(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -3634,7 +3498,7 @@ impl PutMetricAlarmError {
                 match &parsed_error.code[..] {
                     "LimitExceeded" => {
                         return RusotoError::Service(PutMetricAlarmError::LimitExceededFault(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -3687,24 +3551,22 @@ impl PutMetricDataError {
                 match &parsed_error.code[..] {
                     "InternalServiceError" => {
                         return RusotoError::Service(PutMetricDataError::InternalServiceFault(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "InvalidParameterCombination" => {
                         return RusotoError::Service(
-                            PutMetricDataError::InvalidParameterCombination(String::from(
-                                parsed_error.message,
-                            )),
+                            PutMetricDataError::InvalidParameterCombination(parsed_error.message),
                         )
                     }
                     "InvalidParameterValue" => {
                         return RusotoError::Service(PutMetricDataError::InvalidParameterValue(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "MissingParameter" => {
                         return RusotoError::Service(PutMetricDataError::MissingRequiredParameter(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -3756,12 +3618,12 @@ impl SetAlarmStateError {
                 match &parsed_error.code[..] {
                     "InvalidFormat" => {
                         return RusotoError::Service(SetAlarmStateError::InvalidFormatFault(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ResourceNotFound" => {
                         return RusotoError::Service(SetAlarmStateError::ResourceNotFound(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -3899,7 +3761,7 @@ impl CloudWatchClient {
     pub fn new(region: region::Region) -> CloudWatchClient {
         CloudWatchClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -3916,7 +3778,7 @@ impl CloudWatchClient {
     {
         CloudWatchClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }

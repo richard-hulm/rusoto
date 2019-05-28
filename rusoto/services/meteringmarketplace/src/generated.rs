@@ -483,7 +483,7 @@ impl MarketplaceMeteringClient {
     pub fn new(region: region::Region) -> MarketplaceMeteringClient {
         MarketplaceMeteringClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -500,7 +500,7 @@ impl MarketplaceMeteringClient {
     {
         MarketplaceMeteringClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }

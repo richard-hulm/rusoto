@@ -2223,7 +2223,7 @@ impl StepFunctionsClient {
     pub fn new(region: region::Region) -> StepFunctionsClient {
         StepFunctionsClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -2240,7 +2240,7 @@ impl StepFunctionsClient {
     {
         StepFunctionsClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }

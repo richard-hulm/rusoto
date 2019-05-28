@@ -2827,7 +2827,7 @@ impl WorkspacesClient {
     pub fn new(region: region::Region) -> WorkspacesClient {
         WorkspacesClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -2844,7 +2844,7 @@ impl WorkspacesClient {
     {
         WorkspacesClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }

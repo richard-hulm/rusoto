@@ -922,7 +922,7 @@ impl Iot1ClickDevicesClient {
     pub fn new(region: region::Region) -> Iot1ClickDevicesClient {
         Iot1ClickDevicesClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -939,7 +939,7 @@ impl Iot1ClickDevicesClient {
     {
         Iot1ClickDevicesClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }

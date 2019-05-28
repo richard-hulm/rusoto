@@ -1422,7 +1422,7 @@ impl CloudWatchEventsClient {
     pub fn new(region: region::Region) -> CloudWatchEventsClient {
         CloudWatchEventsClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -1439,7 +1439,7 @@ impl CloudWatchEventsClient {
     {
         CloudWatchEventsClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }

@@ -37,7 +37,7 @@ use xml::EventReader;
 struct ActivitiesDeserializer;
 impl ActivitiesDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<Activity>, XmlParseError> {
@@ -62,7 +62,7 @@ pub struct ActivitiesType {
 struct ActivitiesTypeDeserializer;
 impl ActivitiesTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ActivitiesType, XmlParseError> {
@@ -109,7 +109,7 @@ pub struct Activity {
 struct ActivityDeserializer;
 impl ActivityDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Activity, XmlParseError> {
@@ -178,7 +178,7 @@ pub struct ActivityType {
 struct ActivityTypeDeserializer;
 impl ActivityTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ActivityType, XmlParseError> {
@@ -203,7 +203,7 @@ pub struct AdjustmentType {
 struct AdjustmentTypeDeserializer;
 impl AdjustmentTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<AdjustmentType, XmlParseError> {
@@ -224,7 +224,7 @@ impl AdjustmentTypeDeserializer {
 struct AdjustmentTypesDeserializer;
 impl AdjustmentTypesDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<AdjustmentType>, XmlParseError> {
@@ -250,10 +250,7 @@ pub struct Alarm {
 struct AlarmDeserializer;
 impl AlarmDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<Alarm, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<Alarm, XmlParseError> {
         deserialize_elements::<_, Alarm, _>(tag_name, stack, |name, stack, obj| {
             match name {
                 "AlarmARN" => {
@@ -274,7 +271,7 @@ impl AlarmDeserializer {
 struct AlarmsDeserializer;
 impl AlarmsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<Alarm>, XmlParseError> {
@@ -291,10 +288,7 @@ impl AlarmsDeserializer {
 struct AsciiStringMaxLen255Deserializer;
 impl AsciiStringMaxLen255Deserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -305,10 +299,7 @@ impl AsciiStringMaxLen255Deserializer {
 struct AssociatePublicIpAddressDeserializer;
 impl AssociatePublicIpAddressDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<bool, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<bool, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = bool::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -353,7 +344,7 @@ pub struct AttachLoadBalancerTargetGroupsResultType {}
 struct AttachLoadBalancerTargetGroupsResultTypeDeserializer;
 impl AttachLoadBalancerTargetGroupsResultTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<AttachLoadBalancerTargetGroupsResultType, XmlParseError> {
@@ -401,7 +392,7 @@ pub struct AttachLoadBalancersResultType {}
 struct AttachLoadBalancersResultTypeDeserializer;
 impl AttachLoadBalancersResultTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<AttachLoadBalancersResultType, XmlParseError> {
@@ -501,7 +492,7 @@ pub struct AutoScalingGroup {
 struct AutoScalingGroupDeserializer;
 impl AutoScalingGroupDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<AutoScalingGroup, XmlParseError> {
@@ -653,10 +644,7 @@ impl AutoScalingGroupDeserializer {
 struct AutoScalingGroupDesiredCapacityDeserializer;
 impl AutoScalingGroupDesiredCapacityDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -667,10 +655,7 @@ impl AutoScalingGroupDesiredCapacityDeserializer {
 struct AutoScalingGroupMaxSizeDeserializer;
 impl AutoScalingGroupMaxSizeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -681,10 +666,7 @@ impl AutoScalingGroupMaxSizeDeserializer {
 struct AutoScalingGroupMinSizeDeserializer;
 impl AutoScalingGroupMinSizeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -742,7 +724,7 @@ impl AutoScalingGroupNamesTypeSerializer {
 struct AutoScalingGroupsDeserializer;
 impl AutoScalingGroupsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<AutoScalingGroup>, XmlParseError> {
@@ -767,7 +749,7 @@ pub struct AutoScalingGroupsType {
 struct AutoScalingGroupsTypeDeserializer;
 impl AutoScalingGroupsTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<AutoScalingGroupsType, XmlParseError> {
@@ -813,7 +795,7 @@ pub struct AutoScalingInstanceDetails {
 struct AutoScalingInstanceDetailsDeserializer;
 impl AutoScalingInstanceDetailsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<AutoScalingInstanceDetails, XmlParseError> {
@@ -874,7 +856,7 @@ impl AutoScalingInstanceDetailsDeserializer {
 struct AutoScalingInstancesDeserializer;
 impl AutoScalingInstancesDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<AutoScalingInstanceDetails>, XmlParseError> {
@@ -901,7 +883,7 @@ pub struct AutoScalingInstancesType {
 struct AutoScalingInstancesTypeDeserializer;
 impl AutoScalingInstancesTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<AutoScalingInstancesType, XmlParseError> {
@@ -932,7 +914,7 @@ impl AutoScalingInstancesTypeDeserializer {
 struct AutoScalingNotificationTypesDeserializer;
 impl AutoScalingNotificationTypesDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<String>, XmlParseError> {
@@ -963,7 +945,7 @@ impl AutoScalingNotificationTypesSerializer {
 struct AvailabilityZonesDeserializer;
 impl AvailabilityZonesDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<String>, XmlParseError> {
@@ -1000,7 +982,7 @@ pub struct BatchDeleteScheduledActionAnswer {
 struct BatchDeleteScheduledActionAnswerDeserializer;
 impl BatchDeleteScheduledActionAnswerDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<BatchDeleteScheduledActionAnswer, XmlParseError> {
@@ -1062,7 +1044,7 @@ pub struct BatchPutScheduledUpdateGroupActionAnswer {
 struct BatchPutScheduledUpdateGroupActionAnswerDeserializer;
 impl BatchPutScheduledUpdateGroupActionAnswerDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<BatchPutScheduledUpdateGroupActionAnswer, XmlParseError> {
@@ -1120,10 +1102,7 @@ impl BatchPutScheduledUpdateGroupActionTypeSerializer {
 struct BlockDeviceEbsDeleteOnTerminationDeserializer;
 impl BlockDeviceEbsDeleteOnTerminationDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<bool, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<bool, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = bool::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -1134,10 +1113,7 @@ impl BlockDeviceEbsDeleteOnTerminationDeserializer {
 struct BlockDeviceEbsEncryptedDeserializer;
 impl BlockDeviceEbsEncryptedDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<bool, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<bool, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = bool::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -1148,10 +1124,7 @@ impl BlockDeviceEbsEncryptedDeserializer {
 struct BlockDeviceEbsIopsDeserializer;
 impl BlockDeviceEbsIopsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -1162,10 +1135,7 @@ impl BlockDeviceEbsIopsDeserializer {
 struct BlockDeviceEbsVolumeSizeDeserializer;
 impl BlockDeviceEbsVolumeSizeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -1176,10 +1146,7 @@ impl BlockDeviceEbsVolumeSizeDeserializer {
 struct BlockDeviceEbsVolumeTypeDeserializer;
 impl BlockDeviceEbsVolumeTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -1203,7 +1170,7 @@ pub struct BlockDeviceMapping {
 struct BlockDeviceMappingDeserializer;
 impl BlockDeviceMappingDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<BlockDeviceMapping, XmlParseError> {
@@ -1257,7 +1224,7 @@ impl BlockDeviceMappingSerializer {
 struct BlockDeviceMappingsDeserializer;
 impl BlockDeviceMappingsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<BlockDeviceMapping>, XmlParseError> {
@@ -1288,7 +1255,7 @@ impl BlockDeviceMappingsSerializer {
 struct ClassicLinkVPCSecurityGroupsDeserializer;
 impl ClassicLinkVPCSecurityGroupsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<String>, XmlParseError> {
@@ -1322,7 +1289,7 @@ pub struct CompleteLifecycleActionAnswer {}
 struct CompleteLifecycleActionAnswerDeserializer;
 impl CompleteLifecycleActionAnswerDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<CompleteLifecycleActionAnswer, XmlParseError> {
@@ -1385,10 +1352,7 @@ impl CompleteLifecycleActionTypeSerializer {
 struct CooldownDeserializer;
 impl CooldownDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -1717,7 +1681,7 @@ pub struct CustomizedMetricSpecification {
 struct CustomizedMetricSpecificationDeserializer;
 impl CustomizedMetricSpecificationDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<CustomizedMetricSpecification, XmlParseError> {
@@ -1811,7 +1775,7 @@ pub struct DeleteLifecycleHookAnswer {}
 struct DeleteLifecycleHookAnswerDeserializer;
 impl DeleteLifecycleHookAnswerDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<DeleteLifecycleHookAnswer, XmlParseError> {
@@ -1966,7 +1930,7 @@ pub struct DescribeAccountLimitsAnswer {
 struct DescribeAccountLimitsAnswerDeserializer;
 impl DescribeAccountLimitsAnswerDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<DescribeAccountLimitsAnswer, XmlParseError> {
@@ -2019,7 +1983,7 @@ pub struct DescribeAdjustmentTypesAnswer {
 struct DescribeAdjustmentTypesAnswerDeserializer;
 impl DescribeAdjustmentTypesAnswerDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<DescribeAdjustmentTypesAnswer, XmlParseError> {
@@ -2084,7 +2048,7 @@ pub struct DescribeAutoScalingNotificationTypesAnswer {
 struct DescribeAutoScalingNotificationTypesAnswerDeserializer;
 impl DescribeAutoScalingNotificationTypesAnswerDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<DescribeAutoScalingNotificationTypesAnswer, XmlParseError> {
@@ -2117,7 +2081,7 @@ pub struct DescribeLifecycleHookTypesAnswer {
 struct DescribeLifecycleHookTypesAnswerDeserializer;
 impl DescribeLifecycleHookTypesAnswerDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<DescribeLifecycleHookTypesAnswer, XmlParseError> {
@@ -2150,7 +2114,7 @@ pub struct DescribeLifecycleHooksAnswer {
 struct DescribeLifecycleHooksAnswerDeserializer;
 impl DescribeLifecycleHooksAnswerDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<DescribeLifecycleHooksAnswer, XmlParseError> {
@@ -2245,7 +2209,7 @@ pub struct DescribeLoadBalancerTargetGroupsResponse {
 struct DescribeLoadBalancerTargetGroupsResponseDeserializer;
 impl DescribeLoadBalancerTargetGroupsResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<DescribeLoadBalancerTargetGroupsResponse, XmlParseError> {
@@ -2316,7 +2280,7 @@ pub struct DescribeLoadBalancersResponse {
 struct DescribeLoadBalancersResponseDeserializer;
 impl DescribeLoadBalancersResponseDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<DescribeLoadBalancersResponse, XmlParseError> {
@@ -2352,7 +2316,7 @@ pub struct DescribeMetricCollectionTypesAnswer {
 struct DescribeMetricCollectionTypesAnswerDeserializer;
 impl DescribeMetricCollectionTypesAnswerDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<DescribeMetricCollectionTypesAnswer, XmlParseError> {
@@ -2392,7 +2356,7 @@ pub struct DescribeNotificationConfigurationsAnswer {
 struct DescribeNotificationConfigurationsAnswerDeserializer;
 impl DescribeNotificationConfigurationsAnswerDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<DescribeNotificationConfigurationsAnswer, XmlParseError> {
@@ -2643,7 +2607,7 @@ pub struct DescribeTerminationPolicyTypesAnswer {
 struct DescribeTerminationPolicyTypesAnswerDeserializer;
 impl DescribeTerminationPolicyTypesAnswerDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<DescribeTerminationPolicyTypesAnswer, XmlParseError> {
@@ -2676,7 +2640,7 @@ pub struct DetachInstancesAnswer {
 struct DetachInstancesAnswerDeserializer;
 impl DetachInstancesAnswerDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<DetachInstancesAnswer, XmlParseError> {
@@ -2736,7 +2700,7 @@ pub struct DetachLoadBalancerTargetGroupsResultType {}
 struct DetachLoadBalancerTargetGroupsResultTypeDeserializer;
 impl DetachLoadBalancerTargetGroupsResultTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<DetachLoadBalancerTargetGroupsResultType, XmlParseError> {
@@ -2784,7 +2748,7 @@ pub struct DetachLoadBalancersResultType {}
 struct DetachLoadBalancersResultTypeDeserializer;
 impl DetachLoadBalancersResultTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<DetachLoadBalancersResultType, XmlParseError> {
@@ -2856,10 +2820,7 @@ impl DisableMetricsCollectionQuerySerializer {
 struct DisableScaleInDeserializer;
 impl DisableScaleInDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<bool, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<bool, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = bool::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -2887,10 +2848,7 @@ pub struct Ebs {
 struct EbsDeserializer;
 impl EbsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<Ebs, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<Ebs, XmlParseError> {
         deserialize_elements::<_, Ebs, _>(tag_name, stack, |name, stack, obj| {
             match name {
                 "DeleteOnTermination" => {
@@ -2970,10 +2928,7 @@ impl EbsSerializer {
 struct EbsOptimizedDeserializer;
 impl EbsOptimizedDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<bool, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<bool, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = bool::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -3023,7 +2978,7 @@ pub struct EnabledMetric {
 struct EnabledMetricDeserializer;
 impl EnabledMetricDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<EnabledMetric, XmlParseError> {
@@ -3049,7 +3004,7 @@ impl EnabledMetricDeserializer {
 struct EnabledMetricsDeserializer;
 impl EnabledMetricsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<EnabledMetric>, XmlParseError> {
@@ -3072,7 +3027,7 @@ pub struct EnterStandbyAnswer {
 struct EnterStandbyAnswerDeserializer;
 impl EnterStandbyAnswerDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<EnterStandbyAnswer, XmlParseError> {
@@ -3129,10 +3084,7 @@ impl EnterStandbyQuerySerializer {
 struct EstimatedInstanceWarmupDeserializer;
 impl EstimatedInstanceWarmupDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -3191,7 +3143,7 @@ pub struct ExitStandbyAnswer {
 struct ExitStandbyAnswerDeserializer;
 impl ExitStandbyAnswerDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ExitStandbyAnswer, XmlParseError> {
@@ -3253,7 +3205,7 @@ pub struct FailedScheduledUpdateGroupActionRequest {
 struct FailedScheduledUpdateGroupActionRequestDeserializer;
 impl FailedScheduledUpdateGroupActionRequestDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<FailedScheduledUpdateGroupActionRequest, XmlParseError> {
@@ -3288,7 +3240,7 @@ impl FailedScheduledUpdateGroupActionRequestDeserializer {
 struct FailedScheduledUpdateGroupActionRequestsDeserializer;
 impl FailedScheduledUpdateGroupActionRequestsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<FailedScheduledUpdateGroupActionRequest>, XmlParseError> {
@@ -3347,10 +3299,7 @@ impl FiltersSerializer {
 struct GlobalTimeoutDeserializer;
 impl GlobalTimeoutDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -3361,10 +3310,7 @@ impl GlobalTimeoutDeserializer {
 struct HealthCheckGracePeriodDeserializer;
 impl HealthCheckGracePeriodDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -3375,10 +3321,7 @@ impl HealthCheckGracePeriodDeserializer {
 struct HeartbeatTimeoutDeserializer;
 impl HeartbeatTimeoutDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -3408,7 +3351,7 @@ pub struct Instance {
 struct InstanceDeserializer;
 impl InstanceDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Instance, XmlParseError> {
@@ -3476,7 +3419,7 @@ pub struct InstanceMonitoring {
 struct InstanceMonitoringDeserializer;
 impl InstanceMonitoringDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<InstanceMonitoring, XmlParseError> {
@@ -3512,10 +3455,7 @@ impl InstanceMonitoringSerializer {
 struct InstanceProtectedDeserializer;
 impl InstanceProtectedDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<bool, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<bool, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = bool::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -3526,7 +3466,7 @@ impl InstanceProtectedDeserializer {
 struct InstancesDeserializer;
 impl InstancesDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<Instance>, XmlParseError> {
@@ -3560,7 +3500,7 @@ pub struct InstancesDistribution {
 struct InstancesDistributionDeserializer;
 impl InstancesDistributionDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<InstancesDistribution, XmlParseError> {
@@ -3698,7 +3638,7 @@ pub struct LaunchConfiguration {
 struct LaunchConfigurationDeserializer;
 impl LaunchConfigurationDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<LaunchConfiguration, XmlParseError> {
@@ -3883,7 +3823,7 @@ impl LaunchConfigurationNamesTypeSerializer {
 struct LaunchConfigurationsDeserializer;
 impl LaunchConfigurationsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<LaunchConfiguration>, XmlParseError> {
@@ -3910,7 +3850,7 @@ pub struct LaunchConfigurationsType {
 struct LaunchConfigurationsTypeDeserializer;
 impl LaunchConfigurationsTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<LaunchConfigurationsType, XmlParseError> {
@@ -3950,7 +3890,7 @@ pub struct LaunchTemplate {
 struct LaunchTemplateDeserializer;
 impl LaunchTemplateDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<LaunchTemplate, XmlParseError> {
@@ -4004,10 +3944,7 @@ impl LaunchTemplateSerializer {
 struct LaunchTemplateNameDeserializer;
 impl LaunchTemplateNameDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -4025,7 +3962,7 @@ pub struct LaunchTemplateOverrides {
 struct LaunchTemplateOverridesDeserializer;
 impl LaunchTemplateOverridesDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<LaunchTemplateOverrides, XmlParseError> {
@@ -4077,7 +4014,7 @@ pub struct LaunchTemplateSpecification {
 struct LaunchTemplateSpecificationDeserializer;
 impl LaunchTemplateSpecificationDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<LaunchTemplateSpecification, XmlParseError> {
@@ -4136,10 +4073,7 @@ impl LaunchTemplateSpecificationSerializer {
 struct LifecycleActionResultDeserializer;
 impl LifecycleActionResultDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -4173,7 +4107,7 @@ pub struct LifecycleHook {
 struct LifecycleHookDeserializer;
 impl LifecycleHookDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<LifecycleHook, XmlParseError> {
@@ -4322,7 +4256,7 @@ impl LifecycleHookSpecificationsSerializer {
 struct LifecycleHooksDeserializer;
 impl LifecycleHooksDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<LifecycleHook>, XmlParseError> {
@@ -4339,10 +4273,7 @@ impl LifecycleHooksDeserializer {
 struct LifecycleStateDeserializer;
 impl LifecycleStateDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -4353,10 +4284,7 @@ impl LifecycleStateDeserializer {
 struct LifecycleTransitionDeserializer;
 impl LifecycleTransitionDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -4367,7 +4295,7 @@ impl LifecycleTransitionDeserializer {
 struct LoadBalancerNamesDeserializer;
 impl LoadBalancerNamesDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<String>, XmlParseError> {
@@ -4407,7 +4335,7 @@ pub struct LoadBalancerState {
 struct LoadBalancerStateDeserializer;
 impl LoadBalancerStateDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<LoadBalancerState, XmlParseError> {
@@ -4431,7 +4359,7 @@ impl LoadBalancerStateDeserializer {
 struct LoadBalancerStatesDeserializer;
 impl LoadBalancerStatesDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<LoadBalancerState>, XmlParseError> {
@@ -4457,7 +4385,7 @@ pub struct LoadBalancerTargetGroupState {
 struct LoadBalancerTargetGroupStateDeserializer;
 impl LoadBalancerTargetGroupStateDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<LoadBalancerTargetGroupState, XmlParseError> {
@@ -4487,7 +4415,7 @@ impl LoadBalancerTargetGroupStateDeserializer {
 struct LoadBalancerTargetGroupStatesDeserializer;
 impl LoadBalancerTargetGroupStatesDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<LoadBalancerTargetGroupState>, XmlParseError> {
@@ -4506,10 +4434,7 @@ impl LoadBalancerTargetGroupStatesDeserializer {
 struct MaxNumberOfAutoScalingGroupsDeserializer;
 impl MaxNumberOfAutoScalingGroupsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -4520,10 +4445,7 @@ impl MaxNumberOfAutoScalingGroupsDeserializer {
 struct MaxNumberOfLaunchConfigurationsDeserializer;
 impl MaxNumberOfLaunchConfigurationsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -4541,7 +4463,7 @@ pub struct MetricCollectionType {
 struct MetricCollectionTypeDeserializer;
 impl MetricCollectionTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<MetricCollectionType, XmlParseError> {
@@ -4561,7 +4483,7 @@ impl MetricCollectionTypeDeserializer {
 struct MetricCollectionTypesDeserializer;
 impl MetricCollectionTypesDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<MetricCollectionType>, XmlParseError> {
@@ -4589,7 +4511,7 @@ pub struct MetricDimension {
 struct MetricDimensionDeserializer;
 impl MetricDimensionDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<MetricDimension, XmlParseError> {
@@ -4625,10 +4547,7 @@ impl MetricDimensionSerializer {
 struct MetricDimensionNameDeserializer;
 impl MetricDimensionNameDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -4639,10 +4558,7 @@ impl MetricDimensionNameDeserializer {
 struct MetricDimensionValueDeserializer;
 impl MetricDimensionValueDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -4653,7 +4569,7 @@ impl MetricDimensionValueDeserializer {
 struct MetricDimensionsDeserializer;
 impl MetricDimensionsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<MetricDimension>, XmlParseError> {
@@ -4689,7 +4605,7 @@ pub struct MetricGranularityType {
 struct MetricGranularityTypeDeserializer;
 impl MetricGranularityTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<MetricGranularityType, XmlParseError> {
@@ -4710,7 +4626,7 @@ impl MetricGranularityTypeDeserializer {
 struct MetricGranularityTypesDeserializer;
 impl MetricGranularityTypesDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<MetricGranularityType>, XmlParseError> {
@@ -4729,10 +4645,7 @@ impl MetricGranularityTypesDeserializer {
 struct MetricNameDeserializer;
 impl MetricNameDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -4743,10 +4656,7 @@ impl MetricNameDeserializer {
 struct MetricNamespaceDeserializer;
 impl MetricNamespaceDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -4757,10 +4667,7 @@ impl MetricNamespaceDeserializer {
 struct MetricScaleDeserializer;
 impl MetricScaleDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<f64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<f64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = f64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -4771,10 +4678,7 @@ impl MetricScaleDeserializer {
 struct MetricStatisticDeserializer;
 impl MetricStatisticDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -4785,10 +4689,7 @@ impl MetricStatisticDeserializer {
 struct MetricTypeDeserializer;
 impl MetricTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -4799,10 +4700,7 @@ impl MetricTypeDeserializer {
 struct MetricUnitDeserializer;
 impl MetricUnitDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -4825,10 +4723,7 @@ impl MetricsSerializer {
 struct MinAdjustmentMagnitudeDeserializer;
 impl MinAdjustmentMagnitudeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -4839,10 +4734,7 @@ impl MinAdjustmentMagnitudeDeserializer {
 struct MinAdjustmentStepDeserializer;
 impl MinAdjustmentStepDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -4862,7 +4754,7 @@ pub struct MixedInstancesPolicy {
 struct MixedInstancesPolicyDeserializer;
 impl MixedInstancesPolicyDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<MixedInstancesPolicy, XmlParseError> {
@@ -4917,10 +4809,7 @@ impl MixedInstancesPolicySerializer {
 struct MonitoringEnabledDeserializer;
 impl MonitoringEnabledDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<bool, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<bool, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = bool::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -4931,10 +4820,7 @@ impl MonitoringEnabledDeserializer {
 struct NoDeviceDeserializer;
 impl NoDeviceDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<bool, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<bool, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = bool::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -4956,7 +4842,7 @@ pub struct NotificationConfiguration {
 struct NotificationConfigurationDeserializer;
 impl NotificationConfigurationDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<NotificationConfiguration, XmlParseError> {
@@ -4991,7 +4877,7 @@ impl NotificationConfigurationDeserializer {
 struct NotificationConfigurationsDeserializer;
 impl NotificationConfigurationsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<NotificationConfiguration>, XmlParseError> {
@@ -5010,10 +4896,7 @@ impl NotificationConfigurationsDeserializer {
 struct NumberOfAutoScalingGroupsDeserializer;
 impl NumberOfAutoScalingGroupsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -5024,10 +4907,7 @@ impl NumberOfAutoScalingGroupsDeserializer {
 struct NumberOfLaunchConfigurationsDeserializer;
 impl NumberOfLaunchConfigurationsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -5038,10 +4918,7 @@ impl NumberOfLaunchConfigurationsDeserializer {
 struct OnDemandBaseCapacityDeserializer;
 impl OnDemandBaseCapacityDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -5052,10 +4929,7 @@ impl OnDemandBaseCapacityDeserializer {
 struct OnDemandPercentageAboveBaseCapacityDeserializer;
 impl OnDemandPercentageAboveBaseCapacityDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -5066,7 +4940,7 @@ impl OnDemandPercentageAboveBaseCapacityDeserializer {
 struct OverridesDeserializer;
 impl OverridesDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<LaunchTemplateOverrides>, XmlParseError> {
@@ -5105,7 +4979,7 @@ pub struct PoliciesType {
 struct PoliciesTypeDeserializer;
 impl PoliciesTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<PoliciesType, XmlParseError> {
@@ -5137,7 +5011,7 @@ pub struct PolicyARNType {
 struct PolicyARNTypeDeserializer;
 impl PolicyARNTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<PolicyARNType, XmlParseError> {
@@ -5161,10 +5035,7 @@ impl PolicyARNTypeDeserializer {
 struct PolicyIncrementDeserializer;
 impl PolicyIncrementDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -5207,7 +5078,7 @@ pub struct PredefinedMetricSpecification {
 struct PredefinedMetricSpecificationDeserializer;
 impl PredefinedMetricSpecificationDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<PredefinedMetricSpecification, XmlParseError> {
@@ -5274,7 +5145,7 @@ pub struct ProcessType {
 struct ProcessTypeDeserializer;
 impl ProcessTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ProcessType, XmlParseError> {
@@ -5293,7 +5164,7 @@ impl ProcessTypeDeserializer {
 struct ProcessesDeserializer;
 impl ProcessesDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<ProcessType>, XmlParseError> {
@@ -5316,7 +5187,7 @@ pub struct ProcessesType {
 struct ProcessesTypeDeserializer;
 impl ProcessesTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ProcessesType, XmlParseError> {
@@ -5336,10 +5207,7 @@ impl ProcessesTypeDeserializer {
 struct ProgressDeserializer;
 impl ProgressDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -5350,10 +5218,7 @@ impl ProgressDeserializer {
 struct PropagateAtLaunchDeserializer;
 impl PropagateAtLaunchDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<bool, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<bool, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = bool::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -5367,7 +5232,7 @@ pub struct PutLifecycleHookAnswer {}
 struct PutLifecycleHookAnswerDeserializer;
 impl PutLifecycleHookAnswerDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<PutLifecycleHookAnswer, XmlParseError> {
@@ -5640,7 +5505,7 @@ pub struct RecordLifecycleActionHeartbeatAnswer {}
 struct RecordLifecycleActionHeartbeatAnswerDeserializer;
 impl RecordLifecycleActionHeartbeatAnswerDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<RecordLifecycleActionHeartbeatAnswer, XmlParseError> {
@@ -5697,10 +5562,7 @@ impl RecordLifecycleActionHeartbeatTypeSerializer {
 struct ResourceNameDeserializer;
 impl ResourceNameDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -5711,10 +5573,7 @@ impl ResourceNameDeserializer {
 struct ScalingActivityStatusCodeDeserializer;
 impl ScalingActivityStatusCodeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -5725,7 +5584,7 @@ impl ScalingActivityStatusCodeDeserializer {
 struct ScalingPoliciesDeserializer;
 impl ScalingPoliciesDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<ScalingPolicy>, XmlParseError> {
@@ -5775,7 +5634,7 @@ pub struct ScalingPolicy {
 struct ScalingPolicyDeserializer;
 impl ScalingPolicyDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ScalingPolicy, XmlParseError> {
@@ -5919,7 +5778,7 @@ pub struct ScheduledActionsType {
 struct ScheduledActionsTypeDeserializer;
 impl ScheduledActionsTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ScheduledActionsType, XmlParseError> {
@@ -5970,7 +5829,7 @@ pub struct ScheduledUpdateGroupAction {
 struct ScheduledUpdateGroupActionDeserializer;
 impl ScheduledUpdateGroupActionDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<ScheduledUpdateGroupAction, XmlParseError> {
@@ -6107,7 +5966,7 @@ impl ScheduledUpdateGroupActionRequestsSerializer {
 struct ScheduledUpdateGroupActionsDeserializer;
 impl ScheduledUpdateGroupActionsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<ScheduledUpdateGroupAction>, XmlParseError> {
@@ -6126,7 +5985,7 @@ impl ScheduledUpdateGroupActionsDeserializer {
 struct SecurityGroupsDeserializer;
 impl SecurityGroupsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<String>, XmlParseError> {
@@ -6221,7 +6080,7 @@ pub struct SetInstanceProtectionAnswer {}
 struct SetInstanceProtectionAnswerDeserializer;
 impl SetInstanceProtectionAnswerDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<SetInstanceProtectionAnswer, XmlParseError> {
@@ -6272,10 +6131,7 @@ impl SetInstanceProtectionQuerySerializer {
 struct SpotInstancePoolsDeserializer;
 impl SpotInstancePoolsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<i64, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<i64, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = i64::from_str(characters(stack)?.as_ref()).unwrap();
         end_element(tag_name, stack)?;
@@ -6286,10 +6142,7 @@ impl SpotInstancePoolsDeserializer {
 struct SpotPriceDeserializer;
 impl SpotPriceDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -6311,7 +6164,7 @@ pub struct StepAdjustment {
 struct StepAdjustmentDeserializer;
 impl StepAdjustmentDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<StepAdjustment, XmlParseError> {
@@ -6371,7 +6224,7 @@ impl StepAdjustmentSerializer {
 struct StepAdjustmentsDeserializer;
 impl StepAdjustmentsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<StepAdjustment>, XmlParseError> {
@@ -6409,7 +6262,7 @@ pub struct SuspendedProcess {
 struct SuspendedProcessDeserializer;
 impl SuspendedProcessDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<SuspendedProcess, XmlParseError> {
@@ -6436,7 +6289,7 @@ impl SuspendedProcessDeserializer {
 struct SuspendedProcessesDeserializer;
 impl SuspendedProcessesDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<SuspendedProcess>, XmlParseError> {
@@ -6508,7 +6361,7 @@ pub struct TagDescription {
 struct TagDescriptionDeserializer;
 impl TagDescriptionDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<TagDescription, XmlParseError> {
@@ -6543,7 +6396,7 @@ impl TagDescriptionDeserializer {
 struct TagDescriptionListDeserializer;
 impl TagDescriptionListDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<TagDescription>, XmlParseError> {
@@ -6560,10 +6413,7 @@ impl TagDescriptionListDeserializer {
 struct TagKeyDeserializer;
 impl TagKeyDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -6574,10 +6424,7 @@ impl TagKeyDeserializer {
 struct TagValueDeserializer;
 impl TagValueDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -6608,7 +6455,7 @@ pub struct TagsType {
 struct TagsTypeDeserializer;
 impl TagsTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<TagsType, XmlParseError> {
@@ -6631,7 +6478,7 @@ impl TagsTypeDeserializer {
 struct TargetGroupARNsDeserializer;
 impl TargetGroupARNsDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<String>, XmlParseError> {
@@ -6675,7 +6522,7 @@ pub struct TargetTrackingConfiguration {
 struct TargetTrackingConfigurationDeserializer;
 impl TargetTrackingConfigurationDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<TargetTrackingConfiguration, XmlParseError> {
@@ -6774,7 +6621,7 @@ impl TerminateInstanceInAutoScalingGroupTypeSerializer {
 struct TerminationPoliciesDeserializer;
 impl TerminationPoliciesDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
+    fn deserialize<T: Peek + Next>(
         tag_name: &str,
         stack: &mut T,
     ) -> Result<Vec<String>, XmlParseError> {
@@ -6805,10 +6652,7 @@ impl TerminationPoliciesSerializer {
 struct TimestampTypeDeserializer;
 impl TimestampTypeDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -6955,10 +6799,7 @@ impl ValuesSerializer {
 struct XmlStringDeserializer;
 impl XmlStringDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -6969,10 +6810,7 @@ impl XmlStringDeserializer {
 struct XmlStringMaxLen1023Deserializer;
 impl XmlStringMaxLen1023Deserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -6983,10 +6821,7 @@ impl XmlStringMaxLen1023Deserializer {
 struct XmlStringMaxLen1600Deserializer;
 impl XmlStringMaxLen1600Deserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -6997,10 +6832,7 @@ impl XmlStringMaxLen1600Deserializer {
 struct XmlStringMaxLen19Deserializer;
 impl XmlStringMaxLen19Deserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -7011,10 +6843,7 @@ impl XmlStringMaxLen19Deserializer {
 struct XmlStringMaxLen2047Deserializer;
 impl XmlStringMaxLen2047Deserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -7025,10 +6854,7 @@ impl XmlStringMaxLen2047Deserializer {
 struct XmlStringMaxLen255Deserializer;
 impl XmlStringMaxLen255Deserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -7039,10 +6865,7 @@ impl XmlStringMaxLen255Deserializer {
 struct XmlStringMaxLen32Deserializer;
 impl XmlStringMaxLen32Deserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -7053,10 +6876,7 @@ impl XmlStringMaxLen32Deserializer {
 struct XmlStringMaxLen511Deserializer;
 impl XmlStringMaxLen511Deserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -7067,10 +6887,7 @@ impl XmlStringMaxLen511Deserializer {
 struct XmlStringMaxLen64Deserializer;
 impl XmlStringMaxLen64Deserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -7081,10 +6898,7 @@ impl XmlStringMaxLen64Deserializer {
 struct XmlStringUserDataDeserializer;
 impl XmlStringUserDataDeserializer {
     #[allow(unused_variables)]
-    fn deserialize<'a, T: Peek + Next>(
-        tag_name: &str,
-        stack: &mut T,
-    ) -> Result<String, XmlParseError> {
+    fn deserialize<T: Peek + Next>(tag_name: &str, stack: &mut T) -> Result<String, XmlParseError> {
         start_element(tag_name, stack)?;
         let obj = characters(stack)?;
         end_element(tag_name, stack)?;
@@ -7111,14 +6925,12 @@ impl AttachInstancesError {
                 match &parsed_error.code[..] {
                     "ResourceContention" => {
                         return RusotoError::Service(AttachInstancesError::ResourceContentionFault(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceLinkedRoleFailure" => {
                         return RusotoError::Service(
-                            AttachInstancesError::ServiceLinkedRoleFailure(String::from(
-                                parsed_error.message,
-                            )),
+                            AttachInstancesError::ServiceLinkedRoleFailure(parsed_error.message),
                         )
                     }
                     _ => {}
@@ -7171,14 +6983,14 @@ impl AttachLoadBalancerTargetGroupsError {
                     "ResourceContention" => {
                         return RusotoError::Service(
                             AttachLoadBalancerTargetGroupsError::ResourceContentionFault(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
                     "ServiceLinkedRoleFailure" => {
                         return RusotoError::Service(
                             AttachLoadBalancerTargetGroupsError::ServiceLinkedRoleFailure(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
@@ -7229,16 +7041,14 @@ impl AttachLoadBalancersError {
                 match &parsed_error.code[..] {
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            AttachLoadBalancersError::ResourceContentionFault(String::from(
-                                parsed_error.message,
-                            )),
+                            AttachLoadBalancersError::ResourceContentionFault(parsed_error.message),
                         )
                     }
                     "ServiceLinkedRoleFailure" => {
                         return RusotoError::Service(
-                            AttachLoadBalancersError::ServiceLinkedRoleFailure(String::from(
+                            AttachLoadBalancersError::ServiceLinkedRoleFailure(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -7288,9 +7098,9 @@ impl BatchDeleteScheduledActionError {
                 match &parsed_error.code[..] {
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            BatchDeleteScheduledActionError::ResourceContentionFault(String::from(
+                            BatchDeleteScheduledActionError::ResourceContentionFault(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -7344,21 +7154,21 @@ impl BatchPutScheduledUpdateGroupActionError {
                     "AlreadyExists" => {
                         return RusotoError::Service(
                             BatchPutScheduledUpdateGroupActionError::AlreadyExistsFault(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(
                             BatchPutScheduledUpdateGroupActionError::LimitExceededFault(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
                     "ResourceContention" => {
                         return RusotoError::Service(
                             BatchPutScheduledUpdateGroupActionError::ResourceContentionFault(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
@@ -7408,9 +7218,9 @@ impl CompleteLifecycleActionError {
                 match &parsed_error.code[..] {
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            CompleteLifecycleActionError::ResourceContentionFault(String::from(
+                            CompleteLifecycleActionError::ResourceContentionFault(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -7463,30 +7273,26 @@ impl CreateAutoScalingGroupError {
                 match &parsed_error.code[..] {
                     "AlreadyExists" => {
                         return RusotoError::Service(
-                            CreateAutoScalingGroupError::AlreadyExistsFault(String::from(
-                                parsed_error.message,
-                            )),
+                            CreateAutoScalingGroupError::AlreadyExistsFault(parsed_error.message),
                         )
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(
-                            CreateAutoScalingGroupError::LimitExceededFault(String::from(
-                                parsed_error.message,
-                            )),
+                            CreateAutoScalingGroupError::LimitExceededFault(parsed_error.message),
                         )
                     }
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            CreateAutoScalingGroupError::ResourceContentionFault(String::from(
+                            CreateAutoScalingGroupError::ResourceContentionFault(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "ServiceLinkedRoleFailure" => {
                         return RusotoError::Service(
-                            CreateAutoScalingGroupError::ServiceLinkedRoleFailure(String::from(
+                            CreateAutoScalingGroupError::ServiceLinkedRoleFailure(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -7540,23 +7346,23 @@ impl CreateLaunchConfigurationError {
                 match &parsed_error.code[..] {
                     "AlreadyExists" => {
                         return RusotoError::Service(
-                            CreateLaunchConfigurationError::AlreadyExistsFault(String::from(
+                            CreateLaunchConfigurationError::AlreadyExistsFault(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(
-                            CreateLaunchConfigurationError::LimitExceededFault(String::from(
+                            CreateLaunchConfigurationError::LimitExceededFault(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            CreateLaunchConfigurationError::ResourceContentionFault(String::from(
+                            CreateLaunchConfigurationError::ResourceContentionFault(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -7611,24 +7417,22 @@ impl CreateOrUpdateTagsError {
                 match &parsed_error.code[..] {
                     "AlreadyExists" => {
                         return RusotoError::Service(CreateOrUpdateTagsError::AlreadyExistsFault(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(CreateOrUpdateTagsError::LimitExceededFault(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            CreateOrUpdateTagsError::ResourceContentionFault(String::from(
-                                parsed_error.message,
-                            )),
+                            CreateOrUpdateTagsError::ResourceContentionFault(parsed_error.message),
                         )
                     }
                     "ResourceInUse" => {
                         return RusotoError::Service(CreateOrUpdateTagsError::ResourceInUseFault(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -7682,22 +7486,20 @@ impl DeleteAutoScalingGroupError {
                 match &parsed_error.code[..] {
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            DeleteAutoScalingGroupError::ResourceContentionFault(String::from(
+                            DeleteAutoScalingGroupError::ResourceContentionFault(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "ResourceInUse" => {
                         return RusotoError::Service(
-                            DeleteAutoScalingGroupError::ResourceInUseFault(String::from(
-                                parsed_error.message,
-                            )),
+                            DeleteAutoScalingGroupError::ResourceInUseFault(parsed_error.message),
                         )
                     }
                     "ScalingActivityInProgress" => {
                         return RusotoError::Service(
                             DeleteAutoScalingGroupError::ScalingActivityInProgressFault(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
@@ -7749,16 +7551,16 @@ impl DeleteLaunchConfigurationError {
                 match &parsed_error.code[..] {
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            DeleteLaunchConfigurationError::ResourceContentionFault(String::from(
+                            DeleteLaunchConfigurationError::ResourceContentionFault(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "ResourceInUse" => {
                         return RusotoError::Service(
-                            DeleteLaunchConfigurationError::ResourceInUseFault(String::from(
+                            DeleteLaunchConfigurationError::ResourceInUseFault(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -7806,9 +7608,7 @@ impl DeleteLifecycleHookError {
                 match &parsed_error.code[..] {
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            DeleteLifecycleHookError::ResourceContentionFault(String::from(
-                                parsed_error.message,
-                            )),
+                            DeleteLifecycleHookError::ResourceContentionFault(parsed_error.message),
                         )
                     }
                     _ => {}
@@ -7858,7 +7658,7 @@ impl DeleteNotificationConfigurationError {
                     "ResourceContention" => {
                         return RusotoError::Service(
                             DeleteNotificationConfigurationError::ResourceContentionFault(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
@@ -7908,12 +7708,12 @@ impl DeletePolicyError {
                 match &parsed_error.code[..] {
                     "ResourceContention" => {
                         return RusotoError::Service(DeletePolicyError::ResourceContentionFault(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ServiceLinkedRoleFailure" => {
                         return RusotoError::Service(DeletePolicyError::ServiceLinkedRoleFailure(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -7961,9 +7761,9 @@ impl DeleteScheduledActionError {
                 match &parsed_error.code[..] {
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            DeleteScheduledActionError::ResourceContentionFault(String::from(
+                            DeleteScheduledActionError::ResourceContentionFault(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -8012,12 +7812,12 @@ impl DeleteTagsError {
                 match &parsed_error.code[..] {
                     "ResourceContention" => {
                         return RusotoError::Service(DeleteTagsError::ResourceContentionFault(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ResourceInUse" => {
                         return RusotoError::Service(DeleteTagsError::ResourceInUseFault(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -8065,9 +7865,9 @@ impl DescribeAccountLimitsError {
                 match &parsed_error.code[..] {
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            DescribeAccountLimitsError::ResourceContentionFault(String::from(
+                            DescribeAccountLimitsError::ResourceContentionFault(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -8114,9 +7914,9 @@ impl DescribeAdjustmentTypesError {
                 match &parsed_error.code[..] {
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            DescribeAdjustmentTypesError::ResourceContentionFault(String::from(
+                            DescribeAdjustmentTypesError::ResourceContentionFault(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -8165,16 +7965,14 @@ impl DescribeAutoScalingGroupsError {
                 match &parsed_error.code[..] {
                     "InvalidNextToken" => {
                         return RusotoError::Service(
-                            DescribeAutoScalingGroupsError::InvalidNextToken(String::from(
-                                parsed_error.message,
-                            )),
+                            DescribeAutoScalingGroupsError::InvalidNextToken(parsed_error.message),
                         )
                     }
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            DescribeAutoScalingGroupsError::ResourceContentionFault(String::from(
+                            DescribeAutoScalingGroupsError::ResourceContentionFault(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -8226,15 +8024,15 @@ impl DescribeAutoScalingInstancesError {
                 match &parsed_error.code[..] {
                     "InvalidNextToken" => {
                         return RusotoError::Service(
-                            DescribeAutoScalingInstancesError::InvalidNextToken(String::from(
+                            DescribeAutoScalingInstancesError::InvalidNextToken(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "ResourceContention" => {
                         return RusotoError::Service(
                             DescribeAutoScalingInstancesError::ResourceContentionFault(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
@@ -8286,7 +8084,7 @@ impl DescribeAutoScalingNotificationTypesError {
                     "ResourceContention" => {
                         return RusotoError::Service(
                             DescribeAutoScalingNotificationTypesError::ResourceContentionFault(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
@@ -8338,15 +8136,15 @@ impl DescribeLaunchConfigurationsError {
                 match &parsed_error.code[..] {
                     "InvalidNextToken" => {
                         return RusotoError::Service(
-                            DescribeLaunchConfigurationsError::InvalidNextToken(String::from(
+                            DescribeLaunchConfigurationsError::InvalidNextToken(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "ResourceContention" => {
                         return RusotoError::Service(
                             DescribeLaunchConfigurationsError::ResourceContentionFault(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
@@ -8397,9 +8195,9 @@ impl DescribeLifecycleHookTypesError {
                 match &parsed_error.code[..] {
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            DescribeLifecycleHookTypesError::ResourceContentionFault(String::from(
+                            DescribeLifecycleHookTypesError::ResourceContentionFault(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -8446,9 +8244,9 @@ impl DescribeLifecycleHooksError {
                 match &parsed_error.code[..] {
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            DescribeLifecycleHooksError::ResourceContentionFault(String::from(
+                            DescribeLifecycleHooksError::ResourceContentionFault(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -8498,7 +8296,7 @@ impl DescribeLoadBalancerTargetGroupsError {
                     "ResourceContention" => {
                         return RusotoError::Service(
                             DescribeLoadBalancerTargetGroupsError::ResourceContentionFault(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
@@ -8546,9 +8344,9 @@ impl DescribeLoadBalancersError {
                 match &parsed_error.code[..] {
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            DescribeLoadBalancersError::ResourceContentionFault(String::from(
+                            DescribeLoadBalancersError::ResourceContentionFault(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -8598,7 +8396,7 @@ impl DescribeMetricCollectionTypesError {
                     "ResourceContention" => {
                         return RusotoError::Service(
                             DescribeMetricCollectionTypesError::ResourceContentionFault(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
@@ -8651,14 +8449,14 @@ impl DescribeNotificationConfigurationsError {
                     "InvalidNextToken" => {
                         return RusotoError::Service(
                             DescribeNotificationConfigurationsError::InvalidNextToken(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
                     "ResourceContention" => {
                         return RusotoError::Service(
                             DescribeNotificationConfigurationsError::ResourceContentionFault(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
@@ -8711,21 +8509,17 @@ impl DescribePoliciesError {
                 match &parsed_error.code[..] {
                     "InvalidNextToken" => {
                         return RusotoError::Service(DescribePoliciesError::InvalidNextToken(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            DescribePoliciesError::ResourceContentionFault(String::from(
-                                parsed_error.message,
-                            )),
+                            DescribePoliciesError::ResourceContentionFault(parsed_error.message),
                         )
                     }
                     "ServiceLinkedRoleFailure" => {
                         return RusotoError::Service(
-                            DescribePoliciesError::ServiceLinkedRoleFailure(String::from(
-                                parsed_error.message,
-                            )),
+                            DescribePoliciesError::ServiceLinkedRoleFailure(parsed_error.message),
                         )
                     }
                     _ => {}
@@ -8776,16 +8570,14 @@ impl DescribeScalingActivitiesError {
                 match &parsed_error.code[..] {
                     "InvalidNextToken" => {
                         return RusotoError::Service(
-                            DescribeScalingActivitiesError::InvalidNextToken(String::from(
-                                parsed_error.message,
-                            )),
+                            DescribeScalingActivitiesError::InvalidNextToken(parsed_error.message),
                         )
                     }
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            DescribeScalingActivitiesError::ResourceContentionFault(String::from(
+                            DescribeScalingActivitiesError::ResourceContentionFault(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -8836,7 +8628,7 @@ impl DescribeScalingProcessTypesError {
                     "ResourceContention" => {
                         return RusotoError::Service(
                             DescribeScalingProcessTypesError::ResourceContentionFault(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
@@ -8886,16 +8678,14 @@ impl DescribeScheduledActionsError {
                 match &parsed_error.code[..] {
                     "InvalidNextToken" => {
                         return RusotoError::Service(
-                            DescribeScheduledActionsError::InvalidNextToken(String::from(
-                                parsed_error.message,
-                            )),
+                            DescribeScheduledActionsError::InvalidNextToken(parsed_error.message),
                         )
                     }
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            DescribeScheduledActionsError::ResourceContentionFault(String::from(
+                            DescribeScheduledActionsError::ResourceContentionFault(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -8945,12 +8735,12 @@ impl DescribeTagsError {
                 match &parsed_error.code[..] {
                     "InvalidNextToken" => {
                         return RusotoError::Service(DescribeTagsError::InvalidNextToken(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ResourceContention" => {
                         return RusotoError::Service(DescribeTagsError::ResourceContentionFault(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -9001,7 +8791,7 @@ impl DescribeTerminationPolicyTypesError {
                     "ResourceContention" => {
                         return RusotoError::Service(
                             DescribeTerminationPolicyTypesError::ResourceContentionFault(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
@@ -9049,7 +8839,7 @@ impl DetachInstancesError {
                 match &parsed_error.code[..] {
                     "ResourceContention" => {
                         return RusotoError::Service(DetachInstancesError::ResourceContentionFault(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -9099,7 +8889,7 @@ impl DetachLoadBalancerTargetGroupsError {
                     "ResourceContention" => {
                         return RusotoError::Service(
                             DetachLoadBalancerTargetGroupsError::ResourceContentionFault(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
@@ -9147,9 +8937,7 @@ impl DetachLoadBalancersError {
                 match &parsed_error.code[..] {
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            DetachLoadBalancersError::ResourceContentionFault(String::from(
-                                parsed_error.message,
-                            )),
+                            DetachLoadBalancersError::ResourceContentionFault(parsed_error.message),
                         )
                     }
                     _ => {}
@@ -9196,9 +8984,9 @@ impl DisableMetricsCollectionError {
                 match &parsed_error.code[..] {
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            DisableMetricsCollectionError::ResourceContentionFault(String::from(
+                            DisableMetricsCollectionError::ResourceContentionFault(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -9245,9 +9033,9 @@ impl EnableMetricsCollectionError {
                 match &parsed_error.code[..] {
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            EnableMetricsCollectionError::ResourceContentionFault(String::from(
+                            EnableMetricsCollectionError::ResourceContentionFault(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -9294,7 +9082,7 @@ impl EnterStandbyError {
                 match &parsed_error.code[..] {
                     "ResourceContention" => {
                         return RusotoError::Service(EnterStandbyError::ResourceContentionFault(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -9343,14 +9131,14 @@ impl ExecutePolicyError {
                 match &parsed_error.code[..] {
                     "ResourceContention" => {
                         return RusotoError::Service(ExecutePolicyError::ResourceContentionFault(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ScalingActivityInProgress" => {
                         return RusotoError::Service(
-                            ExecutePolicyError::ScalingActivityInProgressFault(String::from(
+                            ExecutePolicyError::ScalingActivityInProgressFault(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -9398,7 +9186,7 @@ impl ExitStandbyError {
                 match &parsed_error.code[..] {
                     "ResourceContention" => {
                         return RusotoError::Service(ExitStandbyError::ResourceContentionFault(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -9447,14 +9235,12 @@ impl PutLifecycleHookError {
                 match &parsed_error.code[..] {
                     "LimitExceeded" => {
                         return RusotoError::Service(PutLifecycleHookError::LimitExceededFault(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            PutLifecycleHookError::ResourceContentionFault(String::from(
-                                parsed_error.message,
-                            )),
+                            PutLifecycleHookError::ResourceContentionFault(parsed_error.message),
                         )
                     }
                     _ => {}
@@ -9508,22 +9294,22 @@ impl PutNotificationConfigurationError {
                 match &parsed_error.code[..] {
                     "LimitExceeded" => {
                         return RusotoError::Service(
-                            PutNotificationConfigurationError::LimitExceededFault(String::from(
+                            PutNotificationConfigurationError::LimitExceededFault(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "ResourceContention" => {
                         return RusotoError::Service(
                             PutNotificationConfigurationError::ResourceContentionFault(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
                     "ServiceLinkedRoleFailure" => {
                         return RusotoError::Service(
                             PutNotificationConfigurationError::ServiceLinkedRoleFailure(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
@@ -9577,21 +9363,17 @@ impl PutScalingPolicyError {
                 match &parsed_error.code[..] {
                     "LimitExceeded" => {
                         return RusotoError::Service(PutScalingPolicyError::LimitExceededFault(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            PutScalingPolicyError::ResourceContentionFault(String::from(
-                                parsed_error.message,
-                            )),
+                            PutScalingPolicyError::ResourceContentionFault(parsed_error.message),
                         )
                     }
                     "ServiceLinkedRoleFailure" => {
                         return RusotoError::Service(
-                            PutScalingPolicyError::ServiceLinkedRoleFailure(String::from(
-                                parsed_error.message,
-                            )),
+                            PutScalingPolicyError::ServiceLinkedRoleFailure(parsed_error.message),
                         )
                     }
                     _ => {}
@@ -9646,22 +9428,22 @@ impl PutScheduledUpdateGroupActionError {
                 match &parsed_error.code[..] {
                     "AlreadyExists" => {
                         return RusotoError::Service(
-                            PutScheduledUpdateGroupActionError::AlreadyExistsFault(String::from(
+                            PutScheduledUpdateGroupActionError::AlreadyExistsFault(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "LimitExceeded" => {
                         return RusotoError::Service(
-                            PutScheduledUpdateGroupActionError::LimitExceededFault(String::from(
+                            PutScheduledUpdateGroupActionError::LimitExceededFault(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "ResourceContention" => {
                         return RusotoError::Service(
                             PutScheduledUpdateGroupActionError::ResourceContentionFault(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
@@ -9714,7 +9496,7 @@ impl RecordLifecycleActionHeartbeatError {
                     "ResourceContention" => {
                         return RusotoError::Service(
                             RecordLifecycleActionHeartbeatError::ResourceContentionFault(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
@@ -9764,12 +9546,12 @@ impl ResumeProcessesError {
                 match &parsed_error.code[..] {
                     "ResourceContention" => {
                         return RusotoError::Service(ResumeProcessesError::ResourceContentionFault(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     "ResourceInUse" => {
                         return RusotoError::Service(ResumeProcessesError::ResourceInUseFault(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -9819,16 +9601,14 @@ impl SetDesiredCapacityError {
                 match &parsed_error.code[..] {
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            SetDesiredCapacityError::ResourceContentionFault(String::from(
-                                parsed_error.message,
-                            )),
+                            SetDesiredCapacityError::ResourceContentionFault(parsed_error.message),
                         )
                     }
                     "ScalingActivityInProgress" => {
                         return RusotoError::Service(
-                            SetDesiredCapacityError::ScalingActivityInProgressFault(String::from(
+                            SetDesiredCapacityError::ScalingActivityInProgressFault(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -9876,9 +9656,7 @@ impl SetInstanceHealthError {
                 match &parsed_error.code[..] {
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            SetInstanceHealthError::ResourceContentionFault(String::from(
-                                parsed_error.message,
-                            )),
+                            SetInstanceHealthError::ResourceContentionFault(parsed_error.message),
                         )
                     }
                     _ => {}
@@ -9927,16 +9705,14 @@ impl SetInstanceProtectionError {
                 match &parsed_error.code[..] {
                     "LimitExceeded" => {
                         return RusotoError::Service(
-                            SetInstanceProtectionError::LimitExceededFault(String::from(
-                                parsed_error.message,
-                            )),
+                            SetInstanceProtectionError::LimitExceededFault(parsed_error.message),
                         )
                     }
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            SetInstanceProtectionError::ResourceContentionFault(String::from(
+                            SetInstanceProtectionError::ResourceContentionFault(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -9986,14 +9762,12 @@ impl SuspendProcessesError {
                 match &parsed_error.code[..] {
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            SuspendProcessesError::ResourceContentionFault(String::from(
-                                parsed_error.message,
-                            )),
+                            SuspendProcessesError::ResourceContentionFault(parsed_error.message),
                         )
                     }
                     "ResourceInUse" => {
                         return RusotoError::Service(SuspendProcessesError::ResourceInUseFault(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ))
                     }
                     _ => {}
@@ -10046,13 +9820,13 @@ impl TerminateInstanceInAutoScalingGroupError {
                     "ResourceContention" => {
                         return RusotoError::Service(
                             TerminateInstanceInAutoScalingGroupError::ResourceContentionFault(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
                     "ScalingActivityInProgress" => return RusotoError::Service(
                         TerminateInstanceInAutoScalingGroupError::ScalingActivityInProgressFault(
-                            String::from(parsed_error.message),
+                            parsed_error.message,
                         ),
                     ),
                     _ => {}
@@ -10106,23 +9880,23 @@ impl UpdateAutoScalingGroupError {
                 match &parsed_error.code[..] {
                     "ResourceContention" => {
                         return RusotoError::Service(
-                            UpdateAutoScalingGroupError::ResourceContentionFault(String::from(
+                            UpdateAutoScalingGroupError::ResourceContentionFault(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     "ScalingActivityInProgress" => {
                         return RusotoError::Service(
                             UpdateAutoScalingGroupError::ScalingActivityInProgressFault(
-                                String::from(parsed_error.message),
+                                parsed_error.message,
                             ),
                         )
                     }
                     "ServiceLinkedRoleFailure" => {
                         return RusotoError::Service(
-                            UpdateAutoScalingGroupError::ServiceLinkedRoleFailure(String::from(
+                            UpdateAutoScalingGroupError::ServiceLinkedRoleFailure(
                                 parsed_error.message,
-                            )),
+                            ),
                         )
                     }
                     _ => {}
@@ -10484,7 +10258,7 @@ impl AutoscalingClient {
     pub fn new(region: region::Region) -> AutoscalingClient {
         AutoscalingClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -10501,7 +10275,7 @@ impl AutoscalingClient {
     {
         AutoscalingClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }

@@ -5678,7 +5678,7 @@ impl AlexaForBusinessClient {
     pub fn new(region: region::Region) -> AlexaForBusinessClient {
         AlexaForBusinessClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -5695,7 +5695,7 @@ impl AlexaForBusinessClient {
     {
         AlexaForBusinessClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }

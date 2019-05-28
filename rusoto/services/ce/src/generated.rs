@@ -1461,7 +1461,7 @@ impl CostExplorerClient {
     pub fn new(region: region::Region) -> CostExplorerClient {
         CostExplorerClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -1478,7 +1478,7 @@ impl CostExplorerClient {
     {
         CostExplorerClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }

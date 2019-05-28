@@ -1716,7 +1716,7 @@ impl ChimeClient {
     pub fn new(region: region::Region) -> ChimeClient {
         ChimeClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -1733,7 +1733,7 @@ impl ChimeClient {
     {
         ChimeClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }

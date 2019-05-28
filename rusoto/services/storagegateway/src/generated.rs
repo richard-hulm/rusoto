@@ -6014,7 +6014,7 @@ impl StorageGatewayClient {
     pub fn new(region: region::Region) -> StorageGatewayClient {
         StorageGatewayClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -6031,7 +6031,7 @@ impl StorageGatewayClient {
     {
         StorageGatewayClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }

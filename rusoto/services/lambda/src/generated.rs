@@ -3934,7 +3934,7 @@ impl LambdaClient {
     pub fn new(region: region::Region) -> LambdaClient {
         LambdaClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -3951,7 +3951,7 @@ impl LambdaClient {
     {
         LambdaClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }

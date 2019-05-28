@@ -1491,7 +1491,7 @@ impl AthenaClient {
     pub fn new(region: region::Region) -> AthenaClient {
         AthenaClient {
             client: Client::shared(),
-            region: region,
+            region,
         }
     }
 
@@ -1508,7 +1508,7 @@ impl AthenaClient {
     {
         AthenaClient {
             client: Client::new_with(credentials_provider, request_dispatcher),
-            region: region,
+            region,
         }
     }
 }
