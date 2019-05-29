@@ -542,6 +542,19 @@ mod tests {
     }
 
     #[test]
+    fn parse_config_file_source_profile() {
+        let result =
+            super::parse_config_file(Path::new("tests/sample-data/source_profile_config"));
+        assert!(result.is_some());
+
+        let profiles = result.unwrap();
+        assert_eq!(profiles.len(), 1);
+
+        let example_profile = profiles.get("example").expect("No example profile in config file");
+        assert_eq!(example_profile.get("source_profile").expect("No source profile"), "example-credentials");
+    }
+
+    #[test]
     fn profile_provider_happy_path() {
         let _guard = lock(&ENV_MUTEX);
         let provider = ProfileProvider::with_configuration(
